@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 37.5">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #8dabc4;
+      }
+
+      .cls-1 {
+        font-size: 10px;
+        font-family: SegoeUI, Segoe UI;
+      }
+    </style>
+  </defs>
+  <g id="Todo" transform="translate(-7 -626)">
+    <text id="Tab_Label" data-name="Tab Label" class="cls-1" transform="translate(7 649.5)"><tspan x="4.509" y="11">Notifications</tspan></text>
+    <g id="Group_18" data-name="Group 18" transform="translate(30.039 626)">
+      <path id="Path_49" data-name="Path 49" class="cls-2" d="M15.609,9.951A7.049,7.049,0,0,0,9.114,3.038V1.047A.99.99,0,0,0,8.067,0,.99.99,0,0,0,7.02,1.047V3.142a7.144,7.144,0,0,0-5.551,6.7L0,17.806a.815.815,0,0,0,.209.838,1.293,1.293,0,0,0,.838.419H4.715a3.959,3.959,0,0,0,3.875,3.561,3.959,3.959,0,0,0,3.875-3.561h3.666a.953.953,0,0,0,.838-.419.815.815,0,0,0,.209-.838ZM8.591,20.425A1.891,1.891,0,0,1,6.81,18.958h3.561A1.891,1.891,0,0,1,8.591,20.425ZM2.306,16.968l1.257-6.7v-.209a4.923,4.923,0,1,1,9.846,0v.209l1.257,6.7Z" transform="translate(0)"/>
+      <path id="Path_50" data-name="Path 50" class="cls-2" d="M8.719,5.7A4.09,4.09,0,0,0,4.634,9.785L3.9,14.6a.981.981,0,0,0,.838,1.152h.209A1.02,1.02,0,0,0,6,14.917l.733-4.609V9.785a1.989,1.989,0,0,1,1.99-1.99A.99.99,0,0,0,9.766,6.747,1.05,1.05,0,0,0,8.719,5.7Z" transform="translate(0.186 0.27)"/>
+    </g>
+  </g>
+</svg>
