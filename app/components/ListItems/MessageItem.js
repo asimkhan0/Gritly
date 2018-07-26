@@ -12,14 +12,14 @@ export default NotificationItem = (props) => {
                     <Image style={styles.avatar}
                            source={require('../../../assets/userAvatar.png')} />
                 </View>
-                <View style={styles.notificationContainer}>
-                    <CustomText medium style={styles.notificationText}>Ted Mosby added you in Stallions Athletes</CustomText>
-                    <CustomText regular style={styles.notificationDate}>March 05</CustomText>
+                <View style={styles.messagesContainer}>
+                    <CustomText medium style={styles.senderNameText}>Rachel Mosby</CustomText>
+                    <CustomText medium style={styles.lastMessageText}>Bye…. talk to you soon.</CustomText>
                 </View>
             </View>
             <View style={styles.rightContainer}>
-                <View style={styles.notificationIconContainer}>
-                        <Icon style={styles.notificationIcon} type='FontAwesome' name='circle'></Icon>
+                <View style={styles.lastMessageTimeContainer}>
+                    <CustomText medium style={styles.lastMessageTimeText}>2h ago</CustomText>
                 </View>
             </View>
         </View>
@@ -47,35 +47,32 @@ const styles = StyleSheet.create({
         justifyContent:'flex-end'
     },
 
-    notificationIcon: {
+    lastMessageTimeText: {
         color:'#8DABC4',
-        fontSize: 6,
-        color: '#253851'
+        fontSize: 10,
     },
     avatarContainer: {
         justifyContent:'center'
     },
     avatar: {
-        height: 30,
-        width: 30
+        height: 50,
+        width: 50
     },
-    notificationContainer: {
+    messagesContainer: {
         flex:1,
         marginLeft: 9,
         justifyContent:'center'
     },
-    notificationText: {
+    senderNameText: {
         fontSize: 14,
         color: '#253851'
-
     },
-    notificationDate: {
+    lastMessageText: {
         fontSize: 10,
         color: '#8DABC4'
     },
 
-    notificationIconContainer: {
-        justifyContent:'flex-start',
-        paddingTop: 7
+    lastMessageTimeContainer: {
+        justifyContent:'center',
     },
 });

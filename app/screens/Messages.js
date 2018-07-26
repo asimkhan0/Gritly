@@ -11,10 +11,10 @@ export default class Client extends React.Component {
 
         return (
             <Container >
-                <Header title='Notifications'/>
+                <Header title='Messages'/>
                 <Content>
                     <CustomList
-                        type={'notification'}
+                        type={'message'}
                     />
                 </Content>
                 <Footer />

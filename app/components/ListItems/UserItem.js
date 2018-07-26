@@ -16,7 +16,7 @@ export default CustomListItem = (props) => {
                 </View>
                 <View style={styles.nameContainer}>
                     <CustomText medium style={styles.name}> Alan Cosby </CustomText>
-                    <CustomText regular style={styles.city}> North California</CustomText>
+                    <CustomText medium style={styles.city}> North California</CustomText>
                 </View>
             </View>
             <View style={styles.rightContainer}>
@@ -47,7 +47,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 9,
         paddingVertical: 8,
         marginVertical:1,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        borderBottomColor:'#CBE6EF',
+        borderBottomWidth:1
     },
     leftContainer: {
         flex:1,
