@@ -3,7 +3,8 @@ import {FlatList} from 'react-native';
 import styles from './styles';
 import CustomText from '../CustomText'
 import {Button, View, Icon} from "native-base";
-import Image from 'react-native-remote-svg'
+import Image from 'react-native-remote-svg';
+
 
 export default class ActionBar extends React.Component {
 
