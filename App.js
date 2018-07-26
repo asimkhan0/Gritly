@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import store from './app/store';
 import SelectOrganization from './app/screens/SelectOrganization';
 import Header from "./app/components/Header";
-import Client from './app/screens/Client'
+import Client from './app/screens/Notifications'
 import ActionBar from './app/components/ActionBar'
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',

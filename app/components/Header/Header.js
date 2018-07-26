@@ -11,7 +11,7 @@ export default CustomHeader = (props) => {
                 </Button>
             </Left>
             <Body>
-                <Title>Header</Title>
+                <Title>{props.title}</Title>
             </Body>
             <Right>
                 <Button transparent>
