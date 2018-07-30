@@ -17,7 +17,7 @@ export default CustomHeader = (props) => {
             </Left>
             <Body>
                 <Text medium  style={styles.title}>{props.title}</Text>
-                <Text regular style={styles.subTitle}>{props.subTitle}</Text>
+                {props.subTitle? <Text regular style={styles.subTitle}>{props.subTitle}</Text>:null}
             </Body>
             <Right>
                 <Button transparent>

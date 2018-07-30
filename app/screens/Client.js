@@ -7,12 +7,17 @@ import Footer from '../components/Footer';
 
 export default class Client extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.tabs = [{value: 'Active', active: true}, {value: 'Inactive'}]
+    }
     render() {
 
         return (
             <Container >
                 <Header title='Client'/>
-                <ActionBar />
+                <ActionBar tabs={this.tabs}/>
                 <Content>
                     <CustomList
                         type={'user'}

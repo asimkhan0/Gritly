@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, List, ListItem, Left, Thumbnail, Body, Right, Icon, View, Button} from 'native-base';
 import {StyleSheet, Image} from 'react-native';
-import CustomText from '../CustomText/index';
+import CustomText from '../../CustomText/index';
 
 export default NotificationItem = (props) => {
 
@@ -10,7 +10,7 @@ export default NotificationItem = (props) => {
             <View style={styles.leftContainer}>
                 <View style={styles.avatarContainer}>
                     <Image style={styles.avatar}
-                           source={require('../../../assets/userAvatar.png')} />
+                           source={require('../../../../assets/userAvatar.png')} />
                 </View>
                 <View style={styles.messagesContainer}>
                     <CustomText medium style={styles.senderNameText}>Rachel Mosby</CustomText>

@@ -12,9 +12,10 @@ export default CustomText = (props) => {
                             props.bold? styles.textBold: null,
                     props.style
                 ]}
-            onPress={() => props.click ? props.click(props.children): null}
-        >
+            onPress={() => props.click ? props.click(props.children): null}>
+
             {props.children}
+
             </Text>
     );
 }

@@ -14,13 +14,13 @@ export default class Client extends React.Component {
                 <Header
                     title='Rachel Viccaji'
                     subTitle='2h ago'
-                    icon={'back'}/>
+                    icon='back'/>
                 <Content>
                     <CustomList
-                        type={'message'}
+                        type={'messageView'}
                     />
                 </Content>
-                <Footer />
+                <Footer type={'input'}/>
             </Container>
         );
     }

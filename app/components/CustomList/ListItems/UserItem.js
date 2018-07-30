@@ -1,9 +1,9 @@
 import React from 'react';
 import {Text, List, ListItem, Left, Thumbnail, Body, Right, Icon, View, Button} from 'native-base';
 import {StyleSheet, Image} from 'react-native';
-import CustomText from '../CustomText/index';
-import PercentageCircle from 'react-native-percentage-circle';
-import Fonts from '../../utils/Fonts';
+import CustomText from '../../CustomText/index';
+import PercentageCircle from '../../PercentageCircle';
+import Fonts from '../../../utils/Fonts';
 
 export default CustomListItem = (props) => {
 
@@ -12,7 +12,7 @@ export default CustomListItem = (props) => {
             <View style={styles.leftContainer}>
                 <View style={styles.avatarContainer}>
                     <Image style={styles.avatar}
-                           source={require('../../../assets/userAvatar.png')} />
+                           source={require('../../../../assets/userAvatar.png')} />
                 </View>
                 <View style={styles.nameContainer}>
                     <CustomText medium style={styles.name}> Alan Cosby </CustomText>
@@ -23,11 +23,11 @@ export default CustomListItem = (props) => {
                 <View style={styles.progressContainer}>
                     {/*<CustomText bold style={styles.progress}> 78% </CustomText>*/}
                     <PercentageCircle radius={19}
-                                      percent={78}
+                                      percent={60}
                                       color={"#92C548"}
                                       borderWidth={5}
                     >
-                        <CustomText bold style={styles.progress}> 78% </CustomText>
+                        <CustomText bold style={styles.progress}> 60% </CustomText>
                     </PercentageCircle>
                 </View>
                 <View style={styles.showMoreButtonContainer}>

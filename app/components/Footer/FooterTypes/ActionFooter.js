@@ -1,12 +1,10 @@
 import React from 'react';
-import styles from './styles';
 import {Button, Footer,FooterTab} from "native-base";
 import Image from 'react-native-remote-svg';
-// import Dashboard from '../../components/CustomSvgs/Add';
-import { Add, Dashboard} from '../../components/CustomSvgs/index';
-// import ModalPicker from 'react-native-modal-picker'
-// import ModalSelector from 'react-native-modal-selector'
-import ModalSelector from '../ModalSelector'
+import { Add } from '../../../components/CustomSvgs/index';
+import ModalSelector from '../../ModalSelector';
+import {StyleSheet} from "react-native";
+
 export default class CustomFooter extends React.Component {
 
 
@@ -29,10 +27,10 @@ export default class CustomFooter extends React.Component {
                 <FooterTab style={styles.container}>
                     <Button vertical>
                         {/*<Icon name="apps" />*/}
-                        <Image source={require('../../../assets/Dashboard.svg')}/>
+                        <Image source={require('../../../../assets/Dashboard.svg')}/>
                     </Button>
                     <Button vertical>
-                        <Image source={require('../../../assets/AllClients.svg')}/>
+                        <Image source={require('../../../../assets/AllClients.svg')}/>
                     </Button>
                     <ModalSelector
                         style={styles.modalSelector}
@@ -48,13 +46,22 @@ export default class CustomFooter extends React.Component {
                         <Add />
                     </ModalSelector>
                     <Button vertical>
-                        <Image source={require('../../../assets/Notifications.svg')}/>
+                        <Image source={require('../../../../assets/Notifications.svg')}/>
                     </Button>
                     <Button vertical>
-                        <Image source={require('../../../assets/Messages.svg')}/>
+                        <Image source={require('../../../../assets/Messages.svg')}/>
                     </Button>
                 </FooterTab>
             </Footer>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: '#253851'
+    },
+    modalSelector: {
+        justifyContent: 'center'
+    }
+})

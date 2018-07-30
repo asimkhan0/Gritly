@@ -11,10 +11,7 @@ export default class ActionBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tabList: [
-                {key: 'Active', value: 'Active', active: true},
-                {key: 'Inactive', value: 'Inactive'}
-            ],
+            tabList: props.tabs,
             selectedValue: 'Active'
         }
     }
@@ -32,10 +29,9 @@ export default class ActionBar extends React.Component {
     }
 
     render() {
+        debugger;
         return (
             <View style={styles.container}>
-                {/*<CustomText style={styles.text}> Active </CustomText>*/}
-                {/*<CustomText style={styles.text}> Inactive </CustomText>*/}
                 <FlatList
                     horizontal={true}
                     style={{flex: 1}}
@@ -48,6 +44,7 @@ export default class ActionBar extends React.Component {
                         >
                             {item.value}
                         </CustomText>}
+                    keyExtractor = {(item, index) => `${index}`}
                 />
                 <Button transparent>
                     <Image style={styles.filterImg} source={require('../../../assets/filter.svg')}/>
@@ -56,3 +53,20 @@ export default class ActionBar extends React.Component {
         );
     }
 }
+
+// makeTabList = (tabsArray) => {
+//     debugger
+//     let newArray = [];
+//     let temp = {};
+//     tabsArray.map((val, index)=> {
+//         temp = {};
+//         // temp['key'] = val;
+//         temp['value'] = val;
+//         if(index === 0) {
+//             temp['active'] = true;
+//         }
+//         console.log(temp);
+//         newArray.push(temp);
+//     });
+//     return newArray;
+// }
