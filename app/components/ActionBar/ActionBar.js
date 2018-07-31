@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import CustomText from '../CustomText'
 import {Button, View, Icon} from "native-base";
@@ -29,7 +29,6 @@ export default class ActionBar extends React.Component {
     }
 
     render() {
-        debugger;
         return (
             <View style={styles.container}>
                 <FlatList
@@ -37,36 +36,19 @@ export default class ActionBar extends React.Component {
                     style={{flex: 1}}
                     data={this.state.tabList}
                     renderItem={({item}) =>
+                        <TouchableOpacity onPress={() => this.selectTab(item.value)}>
                         <CustomText
-                            click={this.selectTab}
                             medium
                             style={[styles.text, item.active ? styles.textSelected : null]}
                         >
                             {item.value}
-                        </CustomText>}
+                        </CustomText></TouchableOpacity>}
                     keyExtractor = {(item, index) => `${index}`}
                 />
-                <Button transparent>
+                {this.props.filterIcon ? <Button transparent>
                     <Image style={styles.filterImg} source={require('../../../assets/filter.svg')}/>
-                </Button>
+                </Button>: null}
             </View>
         );
     }
 }
-
-// makeTabList = (tabsArray) => {
-//     debugger
-//     let newArray = [];
-//     let temp = {};
-//     tabsArray.map((val, index)=> {
-//         temp = {};
-//         // temp['key'] = val;
-//         temp['value'] = val;
-//         if(index === 0) {
-//             temp['active'] = true;
-//         }
-//         console.log(temp);
-//         newArray.push(temp);
-//     });
-//     return newArray;
-// }

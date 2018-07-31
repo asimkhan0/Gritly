@@ -17,7 +17,7 @@ export default class Client extends React.Component {
         return (
             <Container >
                 <Header title='Client'/>
-                <ActionBar tabs={this.tabs}/>
+                <ActionBar tabs={this.tabs} filterIcon/>
                 <Content>
                     <CustomList
                         type={'user'}

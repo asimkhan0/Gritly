@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionFooter, InputFooter } from './FooterTypes';
+import { ActionFooter, InputFooter, ButtonFooter } from './FooterTypes';
 
 export default Footer = (props) =>  {
 
@@ -7,7 +7,8 @@ export default Footer = (props) =>  {
 
     return(
         type === 'action' ? <ActionFooter /> :
-        type === 'input' ? <InputFooter /> : null
+        type === 'input' ? <InputFooter /> :
+        type === 'button' ? <ButtonFooter /> : null
     )
 
 }

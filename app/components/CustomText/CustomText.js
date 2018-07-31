@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text,Button } from 'native-base';
+import { Text } from 'native-base';
 import styles from './styles';
 
 export default CustomText = (props) => {
@@ -11,11 +11,8 @@ export default CustomText = (props) => {
                         props.medium? styles.textMedium:
                             props.bold? styles.textBold: null,
                     props.style
-                ]}
-            onPress={() => props.click ? props.click(props.children): null}>
-
+                ]}>
             {props.children}
-
             </Text>
     );
 }

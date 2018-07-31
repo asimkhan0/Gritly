@@ -4,8 +4,22 @@ export default StyleSheet.create({
     container: {
         paddingHorizontal: 13,
         flexDirection: 'row',
+        backgroundColor: '#fff',
         // borderBottomWidth:1,
         // borderColor:'#8DABC4'
+
+        //ios shadow
+        shadowOpacity: 0.3,
+        shadowRadius: 3,
+        shadowOffset: {
+            height: 0,
+            width: 0
+        },
+        //android
+        //
+        //
+        // shadow
+        elevation: 1
     },
     text: {
         paddingVertical: 10,
