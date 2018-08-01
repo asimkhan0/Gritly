@@ -29,8 +29,9 @@ export default StyleSheet.create({
 
     inactiveSetCont: {
         backgroundColor: '#fff',
-        borderWidth:1,
-        borderColor:'#707070'
+        // borderWidth:1,
+        // borderColor:'#707070',
+
     },
     activeSetCont: {
         backgroundColor: '#253851',

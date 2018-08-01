@@ -15,20 +15,6 @@ export default StyleSheet.create({
         //android
         elevation: 1
     },
-    setHeaderContainer: {
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center',
-        paddingBottom: 27,
-    },
-    setTitle: {
-        fontSize: 14,
-        color: '#8DABC4'
-    },
-    setEdit: {
-        fontSize: 12,
-        color: '#8DABC4'
-    },
 
     setsContainer: {
     },

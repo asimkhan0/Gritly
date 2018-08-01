@@ -2,8 +2,10 @@ import React from 'react';
 import styles from './styles';
 // import Text from '../CustomText'
 import {Button, View, Text} from "native-base";
-import { ScrollView } from 'react-native';
-import {Add, Set} from './SetsComponents';
+import { ScrollView, TouchableOpacity } from 'react-native';
+import {Add} from './SetsComponents';
+import Set from '../Set'
+import {SetsHeader} from "./SetsComponents";
 
 export default class SetsGroup extends React.Component {
 
@@ -15,10 +17,8 @@ export default class SetsGroup extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.setHeaderContainer}>
-                    <Text medium style={styles.setTitle}>{this.props.setTitle}</Text>
-                    <Text medium style={styles.setEdit}>Edit</Text>
-                </View>
+
+                {this.props.header ? <SetsHeader {...this.props} />: null}
                 <ScrollView
                     style={styles.setsContainer}
                     horizontal={true}
@@ -27,10 +27,22 @@ export default class SetsGroup extends React.Component {
                     <Set active={true}/>
                     <Set active={false}/>
                     <Set active={false}/>
-                    <Add />
-
+                    {this.props.onAddSet ? <Add /> : null}
                 </ScrollView>
             </View>
         );
     }
 }
+
+/*
+
+<View style={styles.setHeaderContainer}>
+                    <TouchableOpacity>
+                        <Text medium style={styles.setTitle}>{this.props.setTitle}</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={this.props.onEdit}>
+                        <Text medium style={styles.setEdit}>Edit</Text>
+                    </TouchableOpacity>
+                </View>
+
+ */

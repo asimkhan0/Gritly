@@ -1,7 +1,7 @@
 import Add from './Add';
-import Set from './Set';
+import SetsHeader from './SetsHeader';
 
 export {
     Add,
-    Set
+    SetsHeader
 }

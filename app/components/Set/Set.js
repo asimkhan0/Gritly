@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles';
-import Text from '../../../CustomText/index'
+import Text from '../CustomText/index'
 import {View} from "native-base";
 export default class Set extends React.Component {
 
