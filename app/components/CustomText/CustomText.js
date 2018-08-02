@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text } from 'native-base';
 import styles from './styles';
+import PropTypes from 'prop-types';
 
 export default CustomText = (props) => {
 
@@ -15,4 +16,12 @@ export default CustomText = (props) => {
             {props.children}
             </Text>
     );
+}
+
+CustomText.propTypes = {
+    regular:  PropTypes.bool,
+    medium:   PropTypes.bool,
+    bold:     PropTypes.bool,
+    style:    Text.propTypes.style,
+    children: PropTypes.string.isRequired,
 }

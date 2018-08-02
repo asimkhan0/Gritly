@@ -9,12 +9,12 @@ export default StyleSheet.create({
         marginTop: 7,
         backgroundColor: '#fff',
         borderBottomWidth:1,
-        borderBottomColor: '#707070'
+        borderBottomColor: '#707070',
+        paddingVertical: 8
     },
     restText: {
         color: '#8DABC4',
         fontSize: 12,
-        paddingVertical: 7,
 
     },
     restTextContainer: {
@@ -25,5 +25,10 @@ export default StyleSheet.create({
     },
     toggle: {
         transform: [{ scaleX: .8 }, { scaleY: .8 }]
+    },
+    leftView: {
+        flexDirection: 'row',
+        alignItems:'center'
     }
+
 })

@@ -10,23 +10,8 @@ export default class ActionBar extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            tabList: props.tabs,
-            selectedValue: 'Active'
-        }
     }
 
-    selectTab = (selectedTab) => {
-        const newList = this.state.tabList.map(tab => {
-            if(tab.value === selectedTab) {
-                tab.active = true
-            }else{
-                tab.active = false
-            }
-            return tab;
-        });
-        this.setState({tabList: newList, selectedValue:selectedTab});
-    }
 
     render() {
         return (
@@ -34,9 +19,9 @@ export default class ActionBar extends React.Component {
                 <FlatList
                     horizontal={true}
                     style={{flex: 1}}
-                    data={this.state.tabList}
+                    data={this.props.tabs}
                     renderItem={({item}) =>
-                        <TouchableOpacity onPress={() => this.selectTab(item.value)}>
+                        <TouchableOpacity onPress={() => this.props.selectTab(item.value)}>
                         <CustomText
                             medium
                             style={[styles.text, item.active ? styles.textSelected : null]}

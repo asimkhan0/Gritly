@@ -14,7 +14,7 @@ export default class ModalHeader extends React.Component {
         return (
             <View style={styles.modalHeaderContainer}>
                 <Text medium style={styles.modalHeadingText}>
-                    Edit: {props.heading}
+                    {`Edit: ${props.heading}`}
                 </Text>
                 <Button transparent onPress={this.props.onClose}>
                     <Text medium style={styles.modalSubmitText}>

@@ -5,7 +5,7 @@ import {Button, View, Text} from "native-base";
 import { ScrollView, TouchableOpacity } from 'react-native';
 import {Add} from './SetsComponents';
 import Set from '../Set'
-import {SetsHeader} from "./SetsComponents";
+import SetsHeader from "../SetsHeader";
 
 export default class SetsGroup extends React.Component {
 

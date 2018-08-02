@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles';
-import Text from '../../../CustomText/index'
-import {View, Button} from "native-base";
+import Text from '../CustomText/index'
+import {View, Button, Icon} from "native-base";
 import { TouchableOpacity } from "react-native";
 
 export default class SetsHeader extends React.Component {
@@ -15,10 +15,11 @@ export default class SetsHeader extends React.Component {
         return (
             <View style={styles.setHeaderContainer}>
                 {/*<Button transparent>*/}
-                    <Text medium style={styles.setTitle}>{this.props.setTitle}</Text>
+                    <Text medium style={styles.setTitle}>{this.props.title}</Text>
                 {/*</Button>*/}
                 <TouchableOpacity transparent onPress={this.props.onEdit}>
                     <Text medium style={styles.setEdit}>Edit</Text>
+                    {/*<Icon type={'FontAwesome'} name={'ellipsis-h'}></Icon>*/}
                 </TouchableOpacity>
             </View>
         );
