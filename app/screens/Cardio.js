@@ -10,6 +10,7 @@ import Modal from '../components/Modal';
 import BPM from "../components/BPM";
 import Hr from "../components/Hr/Hr";
 import LBS from "../components/LBS";
+import List from '../components/CustomList';
 
 import Methods from '../utils/Methods';
 
@@ -56,24 +57,27 @@ export default class Cardio extends React.Component {
 
     _renderPreview = () => (
         <Content>
-
+            <View style={styles.previewImageContainer}>
+                <Image style={styles.previewImage} source={require('../../assets/cardioPreview.png')}></Image>
+                <List type={'table'}/>
+            </View>
         </Content>
     )
 
     renderParameters = () => (
-            <Content>
-                <TabbedHeading title={'Heart Rate Tracker: Active'} toggle />
-                <SetsGroup
-                    title={'Repetitions'}
-                    onEdit={this.openEditModal}
-                    onAddSet={()=>console.log('Add')}
-                    header/>
-                <SetsGroup
-                    title={'Distance'}
-                    onEdit={this.openEditModal}
-                    onAddSet={()=>console.log('Add')}
-                    header/>
-            </Content>
+        <Content>
+            <TabbedHeading title={'Heart Rate Tracker: Active'} toggle />
+            <SetsGroup
+                title={'Repetitions'}
+                onEdit={this.openEditModal}
+                onAddSet={()=>console.log('Add')}
+                header/>
+            <SetsGroup
+                title={'Distance'}
+                onEdit={this.openEditModal}
+                onAddSet={()=>console.log('Add')}
+                header/>
+        </Content>
     )
 
     renderMaxHR = () => (
@@ -98,8 +102,8 @@ export default class Cardio extends React.Component {
                 {
                     this.state.selectedTab === 'Preview'?
                         this._renderPreview() :
-                    this.state.selectedTab === 'Parameters'?
-                        this.renderParameters() :
+                        this.state.selectedTab === 'Parameters'?
+                            this.renderParameters() :
                         this.state.selectedTab === 'Max HR'?
                             this.renderMaxHR(): null
                 }
@@ -124,5 +128,11 @@ const styles = StyleSheet.create({
         borderWidth:0.5,
         backgroundColor:'#fff',
         paddingTop:35
+    },
+    previewImageContainer: {
+        marginTop: 7
+    },
+    previewImage: {
+        width: '100%'
     }
 });

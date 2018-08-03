@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, List, ListItem, Left, Thumbnail, Body, Right, Icon, View, Button} from 'native-base';
 import styles from './styles';
-import {UserItem, NotificationItem, MessageItem,MessageSent,MessageRecieved} from './ListItems';
+import {UserItem, NotificationItem, MessageItem,MessageSent,MessageRecieved, Row,Header} from './ListItems';
 
 export default CustomList = (props) => {
 
@@ -16,6 +16,14 @@ export default CustomList = (props) => {
                     <MessageSent/>
                     <MessageRecieved/>
                     <MessageSent/>
+                </View>:
+                props.type === 'table'? <View>
+                    <Header/>
+                    <Row data={'Right shoulder'}/>
+                    <Row data={'Neck Back'}/>
+                    <Row data={'Lower Abdomen'}/>
+                    <Row data={'Arms'}/>
+                    <Row data={'Lower Abdomen'}/>
                 </View>: null
             }
         </View>
