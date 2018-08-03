@@ -25,12 +25,15 @@ export default StyleSheet.create({
         paddingVertical: 10,
         marginRight: 10,
         minWidth: 41,
+        color: '#8DABC4',
+        fontSize: 12
         // marginLeft: 20,
     },
     textSelected: {
         borderStyle: 'solid',
         borderBottomWidth: 3,
         borderColor: '#00E8C6',
+        color: '#253851'
     },
     filterImg: {
         width: 30,
