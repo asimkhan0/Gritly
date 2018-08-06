@@ -1,28 +1,25 @@
-import React from 'react';
-import {Container, Content, View, Text} from 'native-base';
-import { StyleSheet, TouchableOpacity, Image } from 'react-native';
-import Header from '../components/Header';
+import {Content, Left, View} from 'native-base';
+import { Image, StyleSheet } from 'react-native';
 import ActionBar from '../components/ActionBar';
-import TabbedHeading from '../components/TabbedHeading';
+import Description from "../components/Description/Description";
 import Footer from '../components/Footer';
-import SetsGroup from '../components/SetsGroup';
-import Modal from '../components/Modal';
-import BPM from "../components/BPM";
-import Hr from "../components/Hr/Hr";
-import LBS from "../components/LBS";
+import Header from '../components/Header';
 import List from '../components/CustomList';
-
 import Methods from '../utils/Methods';
+import Modal from '../components/Modal';
+import React from 'react';
+import Text from '../components/CustomText';
 
-export default class Cardio extends React.Component {
+
+export default class General extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             isEditModalOpened: false,
             tabs:[
-                {value: 'Preview', active: true},
-                {value: 'Customize Video'},
+                {value: 'Preview'},
+                {value: 'Customize Video',active: true},
             ],
             selectedTab: ''
         }
@@ -45,7 +42,8 @@ export default class Cardio extends React.Component {
         this.setState({tabs: updatedTabs, selectedTab:selectedTab});
     }
     openEditModal = () => {
-        this.setState({isEditModalOpened: true})
+        this.setState({isEditModalOpened: true});
+        //TODO: later on have to check if this modal is being used here.
     }
     closeEditModal = () => {
         this.setState({isEditModalOpened: false})
@@ -65,8 +63,15 @@ export default class Cardio extends React.Component {
         <Content>
             <View style={styles.previewImageContainer}>
                 <Image style={styles.previewImage} source={require('../../assets/cardioPreview.png')}></Image>
-                {/*<List type={'table'}/>*/}
             </View>
+                <Description />
+                <View style={styles.EditMediaRow}>
+                        <Image
+                            source={require('../../assets/camera.png')}
+                            style={styles.cameraIcon}
+                        />
+                    <Text medium style={styles.editMediaText}>Edit Media</Text>
+                </View>
         </Content>
     )
 
@@ -74,7 +79,10 @@ export default class Cardio extends React.Component {
         return (
             <View style={styles.container}>
 
-                <Modal isVisible={this.state.isEditModalOpened} onClose={this.closeEditModal} heading={'Reps'}/>
+                <Modal isVisible={this.state.isEditModalOpened}
+                       onClose={this.closeEditModal}
+                       heading={'Reps'}/>
+
                 <Header title='General'/>
                 <ActionBar tabs={this.state.tabs} selectTab={this.selectTab} />
                 {
@@ -110,5 +118,34 @@ const styles = StyleSheet.create({
     },
     previewImage: {
         width: '100%'
+    },
+    EditMediaRow: {
+        backgroundColor: '#fff',
+        marginTop:10,
+        justifyContent:'flex-start',
+        alignItems:'center',
+        paddingVertical:8,
+        paddingHorizontal: 20,
+        flexDirection:'row',
+        //ios shadow
+        shadowOpacity: 0.3,
+        shadowRadius: 3,
+        shadowOffset: {
+            height: 0,
+            width: 0
+        },
+        //android
+        // shadow
+        elevation: 2,
+        marginBottom:2
+    },
+    cameraIcon: {
+        width: 23,
+        height:20
+    },
+    editMediaText: {
+        fontSize:12,
+        color:'#253851',
+        marginHorizontal: 7
     }
 });
