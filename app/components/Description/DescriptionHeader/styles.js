@@ -3,19 +3,19 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     container: {
         flexDirection: 'row',
-        justifyContent:'space-between',
+        justifyContent: 'space-between',
         marginHorizontal: 15,
-        paddingHorizontal:8,
+        paddingHorizontal: 8,
         borderBottomWidth: 1,
-        borderBottomColor:'#707070'
+        borderBottomColor: '#707070'
     },
     headingTextContainer: {
 
     },
     headingIconContainer: {
         justifyContent:'center',
-        width: 20,
-        justifyContent:'flex-end'
+        justifyContent:'flex-end',
+        width: 20
     },
     pencilIcon: {
         height:13,

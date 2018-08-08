@@ -14,7 +14,7 @@ export default class ButtonFooter extends React.Component {
             <Footer>
                 <FooterTab style={styles.container}>
                     <Button >
-                        <Text medium style={styles.submitButtonText}> Submit </Text>
+                        <Text medium style={styles.submitButtonText}>{this.props.title}</Text>
                     </Button>
                 </FooterTab>
             </Footer>
