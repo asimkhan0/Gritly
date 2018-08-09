@@ -21,22 +21,18 @@ export default class GalleryImage extends Component {
                     width: WIDTH / 4 ,
                 }}
             >
-                {/*<View style={styles.container}>*/}
-                <Image source={{uri : uri}} />
-                    <Image
-                        source={{ uri }}
-                        animation={'bounceIn'}
-                        delay={100 * index}
-                        duration={500}
-                        style={styles.imageContainer}
-                    />
+                <Image
+                    source={{ uri }}
+                    animation={'bounceIn'}
+                    delay={100 * index}
+                    duration={500}
+                    style={styles.imageContainer}
+                />
                 {selected?
-                <View style={styles.overlay} >
-                    <Image source={require('../../../../assets/tick.png')} />
-                </View>: null
+                    <View style={styles.overlay} >
+                        <Image source={require('../../../../assets/tick.png')} />
+                    </View>: null
                 }
-                {/*</View>*/}
-
             </Button>
         );
     }

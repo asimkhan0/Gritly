@@ -49,10 +49,7 @@ const styles = StyleSheet.create({
             height: 0,
             width: 0
         },
-        //android
-        //
-        //
-        // shadow
+        //android shadow
         elevation: 2
     },
     messageText: {
