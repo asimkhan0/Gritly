@@ -9,7 +9,6 @@ const WIDTH = Dimensions.get('window').width;
 export default class GalleryImage extends Component {
     render() {
         const { uri, index, onPress, onLongPress,selected } = this.props;
-        // console.warn(uri);
         return (
             <Button
                 onPress={() => onPress(index)}
