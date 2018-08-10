@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './styles';
 import Text from '../../CustomText/index'
-import {Button, View} from "native-base";
+import {Button, View, Icon} from "native-base";
+import { Image } from 'react-native';
 
 export default class Stat extends React.Component {
 
@@ -14,20 +15,16 @@ export default class Stat extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={[styles.container,{...this.props.style}]}>
                 <View style={styles.headingTextContainer} >
-                    <Text medium style={styles.headingText}>Referals</Text>
+                    <Text medium style={styles.headingText}>Rest Heart Rate</Text>
                 </View>
-                <Button transparent style={styles.headingIconContainer}>
-                    <View style={styles.topRow}>
-                        <Text bold style={styles.topText}>400</Text>
-                    </View>
-                    <View style={styles.bottomRow}>
-                        <Text bold style={styles.leftText}>10 in</Text>
-                        <Text style={styles.rightText}> | </Text>
-                        <Text style={styles.rightText}>10 out</Text>
-                    </View>
-                </Button>
+                {/*<View style={styles.measureTextContainer} >*/}
+                    <Text bold style={styles.valueText}>500 GALLOn</Text>
+                {/*</View>*/}
+                {/*<View style={styles.iconContainer} >*/}
+                    <Image style={styles.icon} source={require('../../../../assets/arrowdown.png')} />
+                {/*</View>*/}
             </View>
         );
     }

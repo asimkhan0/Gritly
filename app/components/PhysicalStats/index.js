@@ -1,3 +1,3 @@
-import UserStats from './UserStats';
+import PhysicalStats from './PhysicalStats';
 
-export default UserStats;
+export default PhysicalStats;

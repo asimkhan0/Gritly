@@ -7,6 +7,7 @@ import Text from '../components/CustomText'
 import Input from '../components/Input';
 import UserStats from "../components/UserStats";
 import ProfessionalMetrics from "../components/ProfessionalMetrics";
+import PhysicalStats from "../components/PhysicalStats";
 
 export default class Dashboard extends React.Component {
 
@@ -29,7 +30,7 @@ export default class Dashboard extends React.Component {
                         <ProfessionalMetrics/>
                     </View>
                     <View style={styles.physicalStatsContainer}>
-
+                        <PhysicalStats />
                     </View>
 
                     <View style={styles.activitiesContainer}>

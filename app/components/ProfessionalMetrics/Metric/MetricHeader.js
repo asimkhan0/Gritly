@@ -40,10 +40,11 @@ const styles = StyleSheet.create({
         borderRadius:100,
         height: 15,
         width: 15,
-        marginRight: 8
+        marginRight: 3
     },
     titleText: {
         color: '#fff',
-        fontSize:12
+        fontSize:12,
+        marginRight: 8
     }
 });

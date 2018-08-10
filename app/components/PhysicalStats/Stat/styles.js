@@ -2,48 +2,37 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
-        marginHorizontal: 7,
-        width: 140,
+        paddingVertical:5,
+        width: 90,
+        height: 90,
+        backgroundColor:'#ff0',
+        alignItems: 'center',
+        justifyContent:'space-between',
+        borderRadius: 4,
+        marginHorizontal: 5,
+        //ios shadow
+        shadowOpacity: 0.3,
+        shadowRadius: 3,
+        shadowOffset: {
+            height: 0,
+            width: 0
+        },
+        //android shadow
+        elevation: 2,
     },
-    headingTextContainer: {
-        paddingBottom:20
-    },
-    headingIconContainer: {
-        backgroundColor:'#F3F2F2',
-        height: 120,
-        width: 140,
-        flexDirection:'column',
-        justifyContent:'space-around'
-    },
-    pencilIcon: {
-        height:13,
-        width:13,
-    },
-    headingText:{
-        fontSize: 14,
-        color: '#253851',
+    headingText: {
+        fontSize:12,
+        color:'#fff',
         textAlign:'center'
     },
-    subHeadingText:{
-        fontSize: 10,
-        color: '#9BB5CB'
-    },
-    bottomRow: {
-        flexDirection: 'row'
-    },
-    topText: {
-        fontSize: 20,
-        color: '#000000'
-    },
-    leftText: {
-        fontSize: 11,
-        color:'#343434'
-    },
-    rightText: {
-        color: '#A29A9A',
-        fontSize: 11,
-    },
-    topRow: {
+    valueText: {
+        // color: '#B65A1A',
+        color: 'rgba(0,0,0,0.2)',
+        fontSize:14,
+        textAlign:'center'
 
+    },
+    icon: {
+        // color:'#fff'
     }
 });
