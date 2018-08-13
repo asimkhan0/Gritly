@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import Input from '../components/Input';
 import TextArea from '../components/TextArea';
 
-export default class Dashboard extends React.Component {
+export default class AddInfo extends React.Component {
 
     constructor(props) {
         super(props);
