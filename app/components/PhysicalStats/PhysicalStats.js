@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles';
 import Stat from "./Stat";
 import {ScrollView} from "react-native";
-import { View} from 'native-base'
+
 export default class PhysicalStats extends React.Component {
 
     constructor(props) {

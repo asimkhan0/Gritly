@@ -4,7 +4,7 @@ export default StyleSheet.create({
     container: {
         paddingTop: 20,
         paddingBottom: 20,
-        backgroundColor: '#fff',
+        // backgroundColor: '#fff',
 
     },
     textContainer: {
