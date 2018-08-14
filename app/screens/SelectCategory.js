@@ -15,9 +15,7 @@ export default class SelectCategory extends React.Component {
     render(){
         return (
             <Container style={styles.container}>
-                <Header
-                    title='SELECT CATEGORY'
-                />
+                <Header title='SELECT CATEGORY' />
                 <Content>
                     <Button full transparent style={styles.button}>
                     <Text medium style={styles.text}>+Activity Group</Text>

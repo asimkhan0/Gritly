@@ -72,6 +72,7 @@ export default class Metric extends React.Component {
                     outerRadius={ 90 }
                     labelRadius={ 110 }
                     sort={(a,b)=>0}
+                    padAngle={0}
                 >
                     <Labels/>
                 </PieChart>
