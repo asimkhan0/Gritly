@@ -1,27 +1,27 @@
 import React from 'react';
-import {Text, List, ListItem, Left, Thumbnail, Body, Right, Icon, View, Button} from 'native-base';
+import {Icon, View, Button} from 'native-base';
 import {StyleSheet, Image} from 'react-native';
 import CustomText from '../../CustomText/index';
 import PercentageCircle from '../../PercentageCircle';
-import Fonts from '../../../utils/Fonts';
 
 export default CustomListItem = (props) => {
 
     return(
         <View style={styles.container}>
             <View style={styles.leftContainer}>
-                <View style={styles.avatarContainer}>
+                {props.avatar?
+                    <View style={styles.avatarContainer}>
                     <Image style={styles.avatar}
                            source={require('../../../../assets/userAvatar.png')} />
-                </View>
+                </View>: null}
                 <View style={styles.nameContainer}>
                     <CustomText medium style={styles.name}> Alan Cosby </CustomText>
-                    <CustomText medium style={styles.city}> North California</CustomText>
+                    {props.subTitle? <CustomText medium style={styles.city}> North California</CustomText>:null}
                 </View>
             </View>
             <View style={styles.rightContainer}>
-                <View style={styles.progressContainer}>
-                    {/*<CustomText bold style={styles.progress}> 78% </CustomText>*/}
+                {props.progress ?
+                    <View style={styles.progressContainer}>
                     <PercentageCircle radius={19}
                                       percent={60}
                                       color={"#92C548"}
@@ -29,7 +29,7 @@ export default CustomListItem = (props) => {
                     >
                         <CustomText bold style={styles.progress}> 60% </CustomText>
                     </PercentageCircle>
-                </View>
+                </View>: null}
                 <View style={styles.showMoreButtonContainer}>
                     <Button transparent>
                         <Icon style={styles.showMore} type='FontAwesome' name='ellipsis-v'></Icon>

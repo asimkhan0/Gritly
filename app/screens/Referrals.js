@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import List from '../components/CustomList';
 
-export default class Programs extends React.Component {
+export default class Referrals extends React.Component {
 
     constructor(props) {
         super(props);
@@ -16,9 +16,9 @@ export default class Programs extends React.Component {
 
         return (
             <Container style={styles.container}>
-                <Header title='Invites'  />
+                <Header title='Referrals'  />
                 <Content>
-                    <List type='invites'/>
+                    <List type='referrals'/>
                 </Content>
                 <Footer type={'action'}/>
             </Container>

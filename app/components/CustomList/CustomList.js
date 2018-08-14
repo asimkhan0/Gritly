@@ -9,14 +9,15 @@ import {
     MessageRecieved,
     Row,
     Header,
-    Invites } from './ListItems';
+    InviteItem,
+    UserGroupItem } from './ListItems';
 
 export default CustomList = (props) => {
 
     return(
         <View>
             {
-                props.type === 'user'? <UserItem/> :
+                props.type === 'user'? <UserItem avatar subTitle progress/> :
                 props.type === 'notification'? <NotificationItem/>:
                 props.type === 'message'? <MessageItem/>:
                 props.type === 'messageView'? <View>
@@ -33,9 +34,16 @@ export default CustomList = (props) => {
                     <Row data={'Arms'}/>
                     <Row data={'Lower Abdomen'}/>
                 </View>:
-                    props.type === 'invites'?
-                    <Invites /> : null
+                    props.type === 'library'? <UserItem avatar subTitle/> :
+                    props.type === 'user_groups'? <UserItem /> :
+                    props.type === 'referrals'? <UserItem subTitle/> :
+                    props.type === 'trackers'? <UserItem />: null
             }
         </View>
     );
 }
+/* SELF NOTES
+
+    Will make rendering components to return for each type, which will map the
+    incoming dataset accordingly.
+ */
