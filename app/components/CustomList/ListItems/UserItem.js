@@ -1,8 +1,9 @@
 import React from 'react';
 import {Icon, View, Button} from 'native-base';
-import {StyleSheet, Image} from 'react-native';
+import {StyleSheet, Image, TouchableOpacity} from 'react-native';
 import CustomText from '../../CustomText/index';
 import PercentageCircle from '../../PercentageCircle';
+import Text from '../../CustomText';
 
 export default CustomListItem = (props) => {
 
@@ -11,9 +12,9 @@ export default CustomListItem = (props) => {
             <View style={styles.leftContainer}>
                 {props.avatar?
                     <View style={styles.avatarContainer}>
-                    <Image style={styles.avatar}
-                           source={require('../../../../assets/userAvatar.png')} />
-                </View>: null}
+                        <Image style={styles.avatar}
+                               source={require('../../../../assets/userAvatar.png')} />
+                    </View>: null}
                 <View style={styles.nameContainer}>
                     <CustomText medium style={styles.name}> Alan Cosby </CustomText>
                     {props.subTitle? <CustomText medium style={styles.city}> North California</CustomText>:null}
@@ -22,19 +23,28 @@ export default CustomListItem = (props) => {
             <View style={styles.rightContainer}>
                 {props.progress ?
                     <View style={styles.progressContainer}>
-                    <PercentageCircle radius={19}
-                                      percent={60}
-                                      color={"#92C548"}
-                                      borderWidth={5}
-                    >
-                        <CustomText bold style={styles.progress}> 60% </CustomText>
-                    </PercentageCircle>
-                </View>: null}
-                <View style={styles.showMoreButtonContainer}>
-                    <Button transparent>
-                        <Icon style={styles.showMore} type='FontAwesome' name='ellipsis-v'></Icon>
-                    </Button>
-                </View>
+                        <PercentageCircle radius={19}
+                                          percent={60}
+                                          color={"#92C548"}
+                                          borderWidth={5}
+                        >
+                            <CustomText bold style={styles.progress}> 60% </CustomText>
+                        </PercentageCircle>
+                    </View>: null}
+                {!props.invites? <View style={styles.showMoreButtonContainer}>
+                        <Button transparent>
+                            <Icon style={styles.showMore} type='FontAwesome' name='ellipsis-v'></Icon>
+                        </Button>
+                    </View> :
+                    <View style={styles.invitesButtonsContainer}>
+                        <TouchableOpacity>
+                            <Text medium style={styles.inviteText}> Accept </Text>
+                        </TouchableOpacity>
+                        <Text medium style={styles.inviteText}>|</Text>
+                        <TouchableOpacity>
+                            <Text medium style={styles.inviteText}> Reject </Text>
+                        </TouchableOpacity>
+                    </View>}
             </View>
         </View>
     );
@@ -49,7 +59,7 @@ const styles = StyleSheet.create({
         marginVertical:1,
         backgroundColor: 'white',
         borderBottomColor:'#CBE6EF',
-        borderBottomWidth:1
+        borderBottomWidth:0.5
     },
     leftContainer: {
         flex:1,
@@ -93,5 +103,14 @@ const styles = StyleSheet.create({
     progress: {
         fontSize: 10,
         color: '#253851'
+    },
+    invitesButtonsContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    inviteText:{
+        color:'#8DABC4',
+        fontSize: 12
     }
 });

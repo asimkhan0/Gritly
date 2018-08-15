@@ -37,7 +37,12 @@ export default CustomList = (props) => {
                     props.type === 'library'? <UserItem avatar subTitle/> :
                     props.type === 'user_groups'? <UserItem /> :
                     props.type === 'referrals'? <UserItem subTitle/> :
-                    props.type === 'trackers'? <UserItem />: null
+                    props.type === 'trackers'? <UserItem />:
+                    props.type === 'invites'? <View>
+                        <UserItem invites avatar/>
+                        <UserItem invites avatar/>
+                        <UserItem invites avatar/>
+                    </View>: null
             }
         </View>
     );
