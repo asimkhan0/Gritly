@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Provider } from 'react-redux';
 import store from './app/store';
-import Client from './app/screens/Invites';
+import Client from './app/screens/Settings';
 
 type Props = {};
 export default class App extends Component<Props> {

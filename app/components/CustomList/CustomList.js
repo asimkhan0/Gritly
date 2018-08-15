@@ -8,9 +8,7 @@ import {
     MessageSent,
     MessageRecieved,
     Row,
-    Header,
-    InviteItem,
-    UserGroupItem } from './ListItems';
+    Header, } from './ListItems';
 
 export default CustomList = (props) => {
 
