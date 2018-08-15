@@ -7,16 +7,17 @@ export default Footer = (props) =>  {
     const { type = 'action' } = props;
 
     return(
-        type === 'action' ? <ActionFooter /> :
+        type === 'action' ? <ActionFooter onAdd={props.onAdd}/> :
         type === 'input' ? <InputFooter /> :
-        type === 'button' ? <ButtonFooter title={props.title}/> : null
+        type === 'button' ? <ButtonFooter title={props.title} /> : null
     )
 
 }
 
 Footer.propTypes = {
     type: PropTypes.string,
-    title: PropTypes.string
+    title: PropTypes.string,
+    onAdd: PropTypes.func
 }
 
 Footer.defaultProps = {

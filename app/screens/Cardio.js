@@ -14,8 +14,6 @@ import List from '../components/CustomList';
 
 import Methods from '../utils/Methods';
 
-// import ModalHeader from "../components/Modal/ModalComponents/ModalHeader/ModalHeader";
-
 export default class Cardio extends React.Component {
 
     constructor(props) {
@@ -94,9 +92,10 @@ export default class Cardio extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
 
-                <Modal isVisible={this.state.isEditModalOpened} onClose={this.closeEditModal} heading={'Reps'}/>
+                <View style={styles.container}>
+                    <Modal isVisible={this.state.isEditModalOpened} onClose={this.closeEditModal} heading={'Reps'}/>
+
                 <Header title='Cardio'/>
                 <ActionBar tabs={this.state.tabs} selectTab={this.selectTab}/>
                 {

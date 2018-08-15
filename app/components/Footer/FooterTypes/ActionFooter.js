@@ -4,11 +4,13 @@ import Image from 'react-native-remote-svg';
 import { Add } from '../../../components/CustomSvgs/index';
 import ModalSelector from '../../ModalSelector';
 import {StyleSheet} from "react-native";
+import PropTypes from 'prop-types';
 
 export default class CustomFooter extends React.Component {
 
 
     render() {
+        const { onAdd } = this.props;
         let index = 0;
         const data = [
             { key: index++, section: true, label: 'Options' },
@@ -32,19 +34,23 @@ export default class CustomFooter extends React.Component {
                     <Button vertical>
                         <Image source={require('../../../../assets/AllClients.svg')}/>
                     </Button>
-                    <ModalSelector
-                        style={styles.modalSelector}
-                        data={data}
-                        supportedOrientations={['landscape']}
-                        accessible={true}
-                        scrollViewAccessibilityLabel={'Scrollable options'}
-                        cancelText={'Cancel'}
-                        onChange={(option)=>{ alert(`${option.label} (${option.key})`) }}
+                    {!onAdd?<ModalSelector
+                            style={styles.modalSelector}
+                            data={data}
+                            supportedOrientations={['landscape']}
+                            accessible={true}
+                            scrollViewAccessibilityLabel={'Scrollable options'}
+                            cancelText={'Cancel'}
+                            onChange={(option)=>{ alert(`${option.label} (${option.key})`) }}
 
 
-                    >
-                        <Add />
-                    </ModalSelector>
+                        >
+                            <Add />
+                        </ModalSelector>:
+                        <Button onPress={onAdd}>
+                            <Add />
+                        </Button>
+                    }
                     <Button vertical>
                         <Image source={require('../../../../assets/Notifications.svg')}/>
                     </Button>
