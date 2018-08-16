@@ -1,5 +1,6 @@
 import React from 'react';
-import { Header, Left, Button, Icon, Body, Title, Right } from 'native-base';
+import { Header, Left, Button, Icon, Body,  Right } from 'native-base';
+import {Image} from 'react-native';
 import Text from '../CustomText';
 import styles from './styles';
 import PropTypes from 'prop-types';
@@ -22,7 +23,11 @@ export default CustomHeader = (props) => {
             </Body>
             <Right>
                 <Button transparent>
-                    <Icon style={styles.icon} name='search' />
+                    {props.rightIcon === 'filter'?
+                        <Image style={styles.filterImg} source={require('../../../assets/filter.png')}/>
+                        :
+                        <Icon style={styles.icon} name='search'/>
+                    }
                 </Button>
             </Right>
         </Header>
@@ -33,10 +38,10 @@ CustomHeader.propTypes = {
     title: PropTypes.string,
     icon: PropTypes.string,
     iconPress: PropTypes.func
-}
+};
 
 CustomHeader.defaultProps = {
     iconPress: function () {
         console.warn('home')
     }
-}
+};

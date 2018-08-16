@@ -21,5 +21,9 @@ export default StyleSheet.create({
         color: '#8DABC4',
         // height: 20,
         // width: 20
+    },
+    filterImg: {
+        width: 19,
+        height: 19
     }
 })
