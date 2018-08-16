@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 export default CustomInput = (props) => {
     return(
         <Input
-            style={styles.input}
+            style={[styles.input,props.style]}
             placeholder={props.placeholder}
         />
 );
