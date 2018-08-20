@@ -7,7 +7,9 @@ const HEIGHT = Dimensions.get('window').height;
 
 export default ProgramTypes = (props) => {
     return(
-        <TouchableOpacity style={[styles.container,{minHeight: HEIGHT/5 }]}>
+        <TouchableOpacity style={[styles.container,{minHeight: HEIGHT/5 }]}
+                          onPress={() => props.onPress()}
+        >
             {props.children}
             <Text medium style={styles.typeTitle}>{props.title}</Text>
         </TouchableOpacity>

@@ -13,7 +13,7 @@ export default class ButtonFooter extends React.Component {
         return (
             <Footer>
                 <FooterTab style={styles.container}>
-                    <Button >
+                    <Button onPress={this.props.onPress}>
                         <Text medium style={styles.submitButtonText}>{this.props.title}</Text>
                     </Button>
                 </FooterTab>

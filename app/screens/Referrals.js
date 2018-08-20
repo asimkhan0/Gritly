@@ -16,11 +16,11 @@ export default class Referrals extends React.Component {
 
         return (
             <Container style={styles.container}>
-                <Header title='Referrals'  />
+                <Header title='Referrals' {...this.props} />
                 <Content>
                     <List type='referrals'/>
                 </Content>
-                <Footer type={'action'}/>
+                <Footer type={'action'} {...this.props}/>
             </Container>
         )
     }

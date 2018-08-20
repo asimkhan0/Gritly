@@ -1,5 +1,5 @@
 import {Content, Left, View} from 'native-base';
-import { Image, StyleSheet } from 'react-native';
+import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 import ActionBar from '../components/ActionBar';
 import Description from "../components/Description/Description";
 import Footer from '../components/Footer';
@@ -12,6 +12,10 @@ import Text from '../components/CustomText';
 
 
 export default class General extends React.Component {
+
+    static navigationOptions = {
+        title:"General"
+    };
 
     constructor(props) {
         super(props);
@@ -65,13 +69,14 @@ export default class General extends React.Component {
                 <Image style={styles.previewImage} source={require('../../assets/cardioPreview.png')}></Image>
             </View>
                 <Description />
-                <View style={styles.EditMediaRow}>
+                <TouchableOpacity style={styles.EditMediaRow}
+                                  onPress={()=>this.props.navigation.navigate('allVideos')}>
                         <Image
                             source={require('../../assets/camera.png')}
                             style={styles.cameraIcon}
                         />
                     <Text medium style={styles.editMediaText}>Edit Media</Text>
-                </View>
+                </TouchableOpacity>
         </Content>
     )
 
@@ -83,7 +88,7 @@ export default class General extends React.Component {
                        onClose={this.closeEditModal}
                        heading={'Reps'}/>
 
-                <Header title='General'/>
+                {/*<Header title='General'/>*/}
                 <ActionBar tabs={this.state.tabs} selectTab={this.selectTab} />
                 {
                     this.state.selectedTab === 'Preview'?

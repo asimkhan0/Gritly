@@ -11,24 +11,31 @@ export default class SelectCategory extends React.Component {
         super(props);
 
     }
+    static navigationOptions = {
+        title:"SELECT CATEGORY"
+    };
+
+    navigateToAddInfo = () => {
+        this.props.navigation.navigate('addInfo');
+    }
 
     render(){
         return (
             <Container style={styles.container}>
-                <Header title='SELECT CATEGORY' />
+                {/*<Header title='SELECT CATEGORY' />*/}
                 <Content>
-                    <Button full transparent style={styles.button}>
+                    <Button full transparent style={styles.button} onPress={this.navigateToAddInfo}>
                     <Text medium style={styles.text}>+Activity Group</Text>
                     </Button>
-                    <Button full transparent style={styles.button}>
+                    <Button full transparent style={styles.button} onPress={this.navigateToAddInfo}>
                     <Text medium style={styles.text} >+Circuit Group/ Superset</Text>
                     </Button>
-                    <Button full transparent style={styles.button}>
+                    <Button full transparent style={styles.button} onPress={this.navigateToAddInfo}>
                     <Text medium style={styles.text}>+Rest Break</Text>
                     </Button>
 
                 </Content>
-                <Footer type={'action'}/>
+                <Footer type={'action'} {...this.props}/>
             </Container>
         )
     }

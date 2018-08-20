@@ -10,13 +10,13 @@ export default class Client extends React.Component {
 
         return (
             <Container >
-                <Header title='Messages'/>
+                <Header title='Messages' {...this.props}/>
                 <Content>
                     <CustomList
                         type={'message'}
                     />
                 </Content>
-                <Footer />
+                <Footer type={'action'} {...this.props}/>
             </Container>
         );
     }

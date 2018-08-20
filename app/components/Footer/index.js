@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 
 export default Footer = (props) =>  {
 
-    const { type = 'action' } = props;
+    const { type } = props;
 
     return(
-        type === 'action' ? <ActionFooter onAdd={props.onAdd}/> :
-        type === 'input' ? <InputFooter /> :
-        type === 'button' ? <ButtonFooter title={props.title} /> : null
+        type === 'action' ? <ActionFooter {...props} /> :
+        type === 'input' ? <InputFooter {...props}/> :
+        type === 'button' ? <ButtonFooter {...props} /> : null
     )
 
 }

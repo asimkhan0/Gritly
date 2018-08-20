@@ -16,6 +16,10 @@ import Methods from '../utils/Methods';
 
 export default class Cardio extends React.Component {
 
+
+    static navigationOptions = {
+        title:"Cardio"
+    };
     constructor(props) {
         super(props);
         this.state = {
@@ -96,7 +100,7 @@ export default class Cardio extends React.Component {
                 <View style={styles.container}>
                     <Modal isVisible={this.state.isEditModalOpened} onClose={this.closeEditModal} heading={'Reps'}/>
 
-                <Header title='Cardio'/>
+                {/*<Header title='Cardio'/>*/}
                 <ActionBar tabs={this.state.tabs} selectTab={this.selectTab}/>
                 {
                     this.state.selectedTab === 'Preview'?

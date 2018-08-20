@@ -10,13 +10,13 @@ export default class Client extends React.Component {
 
         return (
             <Container >
-                <Header title='Notifications'/>
+                <Header title='Notifications' {...this.props}/>
                 <Content>
                     <CustomList
                         type={'notification'}
                     />
                 </Content>
-                <Footer />
+                <Footer type={'action'} {...this.props}/>
             </Container>
         );
     }

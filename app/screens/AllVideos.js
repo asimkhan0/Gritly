@@ -7,6 +7,10 @@ import Gallery from '../components/Gallery';
 
 export default class AllVideos extends React.Component {
 
+    static navigationOptions = {
+        header: null
+    };
+
     constructor(props) {
         super(props);
 
@@ -65,7 +69,7 @@ export default class AllVideos extends React.Component {
                         selectedIndexes={selectedIndexes}
                     />
                 </Content>
-                <Footer type={'button'} title={'Done'}/>
+                <Footer type={'button'} title={'Done'} onPress={() => this.props.navigation.navigate('attach')}/>
             </Container>
         )
     }

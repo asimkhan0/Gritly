@@ -10,12 +10,12 @@ export default class CustomFooter extends React.Component {
 
 
     render() {
-        const { onAdd } = this.props;
+        const { onAdd, navigation } = this.props;
         let index = 0;
         const data = [
             { key: index++, section: true, label: 'Options' },
             { key: index++, label: 'Feed' },
-            { key: index++, label: 'Programs' },
+            { key: index++, label: 'ProgramView' },
             { key: index++, label: 'About', accessibilityLabel: 'Tap here for cranberries' },
             // etc...
             // Can also add additional custom keys which are passed to the onChange callback
@@ -27,11 +27,11 @@ export default class CustomFooter extends React.Component {
         return (
             <Footer>
                 <FooterTab style={styles.container}>
-                    <Button vertical>
+                    <Button vertical onPress={() => navigation.navigate('dashboard')}>
                         {/*<Icon name="apps" />*/}
                         <Image source={require('../../../../assets/Dashboard.svg')}/>
                     </Button>
-                    <Button vertical>
+                    <Button vertical onPress={() => navigation.navigate('clients')}>
                         <Image source={require('../../../../assets/AllClients.svg')}/>
                     </Button>
                     {!onAdd?<ModalSelector
@@ -51,10 +51,10 @@ export default class CustomFooter extends React.Component {
                             <Add />
                         </Button>
                     }
-                    <Button vertical>
+                    <Button vertical onPress={() => navigation.navigate('notifications')}>
                         <Image source={require('../../../../assets/Notifications.svg')}/>
                     </Button>
-                    <Button vertical>
+                    <Button vertical onPress={() => navigation.navigate('messages')}>
                         <Image source={require('../../../../assets/Messages.svg')}/>
                     </Button>
                 </FooterTab>

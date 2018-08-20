@@ -14,6 +14,10 @@ import Methods from '../utils/Methods';
 
 export default class Weight extends React.Component {
 
+    static navigationOptions = {
+        title:"Weight"
+    };
+
     constructor(props) {
         super(props);
         this.state = {
@@ -93,7 +97,7 @@ export default class Weight extends React.Component {
             <View style={styles.container}>
 
                 <Modal isVisible={this.state.isEditModalOpened} onClose={this.closeEditModal} heading={'Reps'}/>
-                <Header title='Weight'/>
+                {/*<Header title='Weight'/>*/}
                 <ActionBar tabs={this.state.tabs} selectTab={this.selectTab}/>
                 {
                     this.state.selectedTab === 'Preview'?

@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet,TouchableOpacity } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import LogoSvg from '../../assets/logo.svg';
@@ -23,6 +23,13 @@ import * as Actions from '../actions'; //Import your actions
 
 export default class Login extends Component {
 
+    static navigationOptions = {
+        header: null
+    };
+
+  navigateTo = (key) => {
+    this.props.navigation.navigate(key);
+  }
   render() {
     return (
         <Container style={[styles.container]}>
@@ -43,13 +50,16 @@ export default class Login extends Component {
             </Form>
 
             <View style={styles.loginButtonContainer}>
-              <Button block primary style={styles.loginButton}>
+              <Button block primary style={styles.loginButton}
+                      onPress={() => this.navigateTo('dashboard')}>
                 <Text>Sign In</Text>
               </Button>
             </View>
             <View style={styles.otherOptions}>
-              <Text style={styles.forgotPassword}>Forgot Password ?</Text>
-              <Text style={styles.signup}>Sign Up </Text>
+               <Text style={styles.forgotPassword}>Forgot Password ?</Text>
+              <TouchableOpacity onPress={() => this.navigateTo('signup')}>
+                  <Text style={styles.signup}>Sign Up </Text>
+              </TouchableOpacity>
             </View>
           </Content>
           </ImageBackground>

@@ -42,12 +42,12 @@ export default class Invites extends React.Component {
 
         return (
             <Container style={styles.container}>
-                <Header title='Invites'  />
+                <Header title='Invites' {...this.props} />
                 <Content>
                     <ActionBar tabs={this.state.tabs} selectTab={this.selectTab} />
                     <List type='invites'/>
                 </Content>
-                <Footer type={'action'}/>
+                <Footer type={'action'} {...this.props}/>
             </Container>
         )
     }

@@ -9,7 +9,7 @@ export default CustomHeader = (props) => {
     return(
         <Header style={styles.headerContainer}>
             <Left>
-                <Button transparent onPress={props.iconPress}>
+                <Button transparent onPress={props.iconPress ? props.iconPress : () => {props.navigation.openDrawer()}}>
                     <Icon
                         name={props.icon === 'back' ? 'arrow-left' : 'bars'}
                         type='FontAwesome'
@@ -22,7 +22,7 @@ export default CustomHeader = (props) => {
                 {props.subTitle? <Text regular style={styles.subTitle}>{props.subTitle}</Text>:null}
             </Body>
             <Right>
-                <Button transparent>
+                <Button transparent onPress={!props.rightIcon ? () => props.navigation.navigate('search'): null}>
                     {props.rightIcon === 'filter'?
                         <Image style={styles.filterImg} source={require('../../../assets/filter.png')}/>
                         :
@@ -38,10 +38,8 @@ CustomHeader.propTypes = {
     title: PropTypes.string,
     icon: PropTypes.string,
     iconPress: PropTypes.func
-};
+}
 
 CustomHeader.defaultProps = {
-    iconPress: function () {
-        console.warn('home')
-    }
-};
+
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet,TouchableOpacity } from 'react-native';
 import {Content, Container,Button, View } from 'native-base';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -14,28 +14,47 @@ export default class Programs extends React.Component {
         super(props);
 
     }
+    static navigationOptions = {
+        header: null,
+    };
 
+    navigateToView = () => {
+        this.props.navigation.navigate('programView')
+    }
     render(){
 
         return (
             <Container style={styles.container}>
-                <Header title='PROGRAMS'  />
+                <Header title='PROGRAMS'  {...this.props}/>
                 <Content>
                     <CalendarStripe />
-                    <View style={styles.box}>
-                        <Text medium style={styles.headingText}>Shoulder Injury Stability</Text>
+                    <TouchableOpacity style={styles.box} onPress={this.navigateToView}>
+                        <Text medium style={styles.boxHeadingText}>Shoulder Injury Stability</Text>
                         <Text medium style={styles.otherText}>
                             By George Griff | 2 weeks ago
                         </Text>
-                    </View>
-                    <View style={styles.activitiesContainer}>
-                        <ActivityGroup title={'Activity Group 1'}/>
-                    </View>
-                    <View style={styles.activitiesContainer}>
-                        <ActivityGroup title={'Activity Group 2'}/>
-                    </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.box} onPress={this.navigateToView}>
+                        <Text medium style={styles.boxHeadingText}>Shoulder Injury Stability</Text>
+                        <Text medium style={styles.otherText}>
+                            By George Griff | 2 weeks ago
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.box} onPress={this.navigateToView}>
+                        <Text medium style={styles.boxHeadingText}>Shoulder Injury Stability</Text>
+                        <Text medium style={styles.otherText}>
+                            By George Griff | 2 weeks ago
+                        </Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={[styles.box,styles.addTextContainer]}
+                        onPress={() => this.props.navigation.push('selectCategory')}
+                    >
+                        <Text medium style={styles.addText}>Add</Text>
+                    </TouchableOpacity>
                 </Content>
-                <Footer type={'action'}/>
+                <Footer type={'action'} {...this.props}/>
             </Container>
         )
     }
@@ -49,7 +68,7 @@ const styles = StyleSheet.create({
     box: {
         backgroundColor:'#fff',
         paddingHorizontal: 17,
-        paddingVertical:22,
+        paddingVertical:11,
         //ios shadow
         shadowOpacity: 0.3,
         shadowRadius: 3,
@@ -59,9 +78,9 @@ const styles = StyleSheet.create({
         },
         //android shadow
         elevation: 2,
-        marginBottom:2,
+        marginBottom:3,
     },
-    headingText: {
+    boxHeadingText: {
         fontSize: 16,
         color: '#253851'
     },
@@ -69,7 +88,12 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: '#8DABC4'
     },
-    activitiesContainer: {
-        marginBottom: 10
+    addText:{
+        fontSize: 16,
+        color: '#253851',
+        textDecorationLine: 'underline',
+    },
+    addTextContainer: {
+        marginTop:10
     }
 });

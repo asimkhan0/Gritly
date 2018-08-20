@@ -54,7 +54,7 @@ export default class Todo extends React.Component {
                 <Content>
                     <ActionBar tabs={this.state.tabs} selectTab={this.selectTab} />
                 </Content>
-                <Footer type={'action'} onAdd={this.onOpen}/>
+                <Footer type={'action'} onAdd={this.onOpen} {...this.props}/>
             </Container>
         )
     }

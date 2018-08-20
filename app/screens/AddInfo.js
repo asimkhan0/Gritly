@@ -10,15 +10,22 @@ export default class AddInfo extends React.Component {
 
     constructor(props) {
         super(props);
+    }
 
+    static navigationOptions = {
+        title:"ADD INFO"
+    };
+
+    navigateToAddInfo = () => {
+        this.props.navigation.navigate('addInfo');
     }
 
     render(){
         return (
             <Container style={styles.container}>
-                <Header
-                    title='ADD INFO'
-                />
+                {/*<Header*/}
+                    {/*title='ADD INFO'*/}
+                {/*/>*/}
                 <Content>
                     <View style={styles.textContainer}>
                         <Input placeholder='Enter description of exercise'/>
@@ -27,7 +34,7 @@ export default class AddInfo extends React.Component {
                         <TextArea placeholder='Enter description of exercise:'/>
                     </View>
                 </Content>
-                <Footer type={'button'} title={'Next'}/>
+                <Footer type={'button'} title={'Next'} onPress={() => this.props.navigation.navigate('selectType')}/>
             </Container>
         )
     }

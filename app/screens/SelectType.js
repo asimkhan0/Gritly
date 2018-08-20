@@ -9,19 +9,26 @@ export default class SelectType extends React.Component {
 
     constructor(props) {
         super(props);
+    }
 
+    static navigationOptions = {
+        title:"SELECT TYPE"
+    };
+
+    navigateTo = (key) => {
+        this.props.navigation.navigate(key);
     }
 
     render(){
         return (
             <Container style={styles.container}>
-                <Header
-                    title='SELECT TYPE'
-                />
+                {/*<Header*/}
+                    {/*title='SELECT TYPE'*/}
+                {/*/>*/}
                 <Content>
-                    <ProgramTypes />
+                    <ProgramTypes onPress={this.navigateTo}/>
                 </Content>
-                <Footer type={'action'}/>
+                <Footer type={'action'} {...this.props}/>
             </Container>
         )
     }

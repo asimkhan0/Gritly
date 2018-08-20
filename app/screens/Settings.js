@@ -41,7 +41,7 @@ export default class Settings extends React.Component {
 
         return (
             <Container style={styles.container}>
-                <Header title='Settings'  />
+                <Header title='Settings' {...this.props} />
                 <Content>
                     <ActionBar tabs={this.state.tabs} selectTab={this.selectTab} />
                     <View style={styles.box}>
@@ -58,7 +58,7 @@ export default class Settings extends React.Component {
                         </View>
                     </View>
                 </Content>
-                <Footer type={'action'}/>
+                <Footer type={'action'} {...this.props}/>
             </Container>
         )
     }

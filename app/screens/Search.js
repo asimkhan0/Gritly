@@ -19,7 +19,7 @@ export default class Search extends React.Component {
               </Header>
 
               <Content></Content>
-              <Footer type={'action'}></Footer>
+              <Footer type={'action'} {...this.props}></Footer>
           </Container>
         );
     }

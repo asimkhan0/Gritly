@@ -16,11 +16,11 @@ export default class UserGroups extends React.Component {
 
         return (
             <Container style={styles.container}>
-                <Header title='USER GROUPS'  />
+                <Header title='USER GROUPS' {...this.props} />
                 <Content>
                     <List type='user_groups'/>
                 </Content>
-                <Footer type={'action'}/>
+                <Footer type={'action'} {...this.props}/>
             </Container>
         )
     }

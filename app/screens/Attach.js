@@ -13,15 +13,18 @@ export default class Attach extends React.Component {
 
     constructor(props) {
         super(props);
-
     }
+
+    static navigationOptions = {
+        title:"ATTACH"
+    };
 
     render(){
         return (
             <Container style={styles.container}>
-                <Header
-                    title='All Videos'
-                />
+                {/*<Header*/}
+                    {/*title='All Videos'*/}
+                {/*/>*/}
                 <Content>
                     <View style={styles.sharedWithContainer}>
                             <Text medium style={styles.sharedWith} >Shared With: </Text>
@@ -35,7 +38,7 @@ export default class Attach extends React.Component {
                         <TextArea rowSpan={5} placeholder='Enter Description'/>
                     </View>
                 </Content>
-                <Footer type={'button'} title={'Done'}/>
+                <Footer type={'button'} title={'Done'} onPress={()=>this.props.navigation.navigate('attach')}/>
             </Container>
         )
     }

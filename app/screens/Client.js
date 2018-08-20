@@ -16,14 +16,14 @@ export default class Client extends React.Component {
 
         return (
             <Container >
-                <Header title='Client'/>
+                <Header title='Client' {...this.props}/>
                 <ActionBar tabs={this.tabs} filterIcon/>
                 <Content>
                     <CustomList
                         type={'user'}
                     />
                 </Content>
-                <Footer />
+                <Footer type={'action'} {...this.props}/>
             </Container>
         );
     }

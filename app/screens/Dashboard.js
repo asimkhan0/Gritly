@@ -20,9 +20,7 @@ export default class Dashboard extends React.Component {
     render(){
         return (
             <Container style={styles.container}>
-                <Header
-                    title='Dashboard'
-                />
+                <Header title='Dashboard' {...this.props}/>
                 <Content>
                     <View style={styles.userStatsContainer}>
                         <UserStats />
@@ -47,7 +45,7 @@ export default class Dashboard extends React.Component {
                     </View>
 
                 </Content>
-                <Footer type={'action'}/>
+                <Footer type={'action'} {...this.props}/>
             </Container>
         )
     }

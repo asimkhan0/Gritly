@@ -36,7 +36,9 @@ export default class SignUp extends Component {
   //   });
   //   this.setState({ fontLoaded: true });
   // }
-
+    static navigationOptions = {
+        header: null
+    };
   render() {
     return (
 

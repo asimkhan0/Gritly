@@ -16,11 +16,11 @@ export default class Programs extends React.Component {
 
         return (
             <Container style={styles.container}>
-                <Header title='Invites'  />
+                <Header title='Library'  {...this.props}/>
                 <Content>
                     <List type='library'/>
                 </Content>
-                <Footer type={'action'}/>
+                <Footer type={'action'} {...this.props}/>
             </Container>
         )
     }

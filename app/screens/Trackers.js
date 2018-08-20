@@ -13,14 +13,13 @@ export default class Trackers extends React.Component {
     }
 
     render(){
-
         return (
             <Container style={styles.container}>
-                <Header title='Trackers'  />
+                <Header title='Trackers' {...this.props} />
                 <Content>
                     <List type='trackers'/>
                 </Content>
-                <Footer type={'action'}/>
+                <Footer type={'action'} {...this.props}/>
             </Container>
         )
     }
