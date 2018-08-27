@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import LogoSvg from '../../assets/logo.svg';
+import LogoSvg from '../../assets/logoSvg.svg';
 import {
     Container,
     View,

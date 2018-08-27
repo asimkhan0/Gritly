@@ -168,7 +168,6 @@ const Drawer = createDrawerNavigator({
 });
 
 export default AppNavigator = createSwitchNavigator({
-    auth: General,
-    // auth: AuthStack,
+    auth: AuthStack,
     home: Drawer,
 })

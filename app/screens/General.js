@@ -22,8 +22,8 @@ export default class General extends React.Component {
         this.state = {
             isEditModalOpened: false,
             tabs:[
-                {value: 'Preview'},
-                {value: 'Customize Video',active: true},
+                {value: 'Preview',active: true},
+                {value: 'Customize Video'},
             ],
             selectedTab: ''
         }

@@ -31,7 +31,7 @@ export default class ActionBar extends React.Component {
                     keyExtractor = {(item, index) => `${index}`}
                 />
                 {this.props.filterIcon ? <Button transparent>
-                    <Image style={styles.filterImg} source={require('../../../assets/filter.svg')}/>
+                    <Image style={styles.filterImg} source={require('../../../assets/filterSvg.svg')}/>
                 </Button>: null}
             </View>
         );

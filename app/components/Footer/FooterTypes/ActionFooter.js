@@ -29,10 +29,10 @@ export default class CustomFooter extends React.Component {
                 <FooterTab style={styles.container}>
                     <Button vertical onPress={() => navigation.navigate('dashboard')}>
                         {/*<Icon name="apps" />*/}
-                        <Image source={require('../../../../assets/Dashboard.svg')}/>
+                        <Image source={require('../../../../assets/Dashboard.png')}/>
                     </Button>
                     <Button vertical onPress={() => navigation.navigate('clients')}>
-                        <Image source={require('../../../../assets/AllClients.svg')}/>
+                        <Image source={require('../../../../assets/AllClients.png')}/>
                     </Button>
                     {!onAdd?<ModalSelector
                             style={styles.modalSelector}
@@ -52,10 +52,10 @@ export default class CustomFooter extends React.Component {
                         </Button>
                     }
                     <Button vertical onPress={() => navigation.navigate('notifications')}>
-                        <Image source={require('../../../../assets/Notifications.svg')}/>
+                        <Image source={require('../../../../assets/Notifications.png')}/>
                     </Button>
                     <Button vertical onPress={() => navigation.navigate('messages')}>
-                        <Image source={require('../../../../assets/Messages.svg')}/>
+                        <Image source={require('../../../../assets/Messages.png')}/>
                     </Button>
                 </FooterTab>
             </Footer>
