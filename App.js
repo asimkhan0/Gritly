@@ -17,6 +17,7 @@ import Library from './app/screens/Library';
 import Settings from './app/screens/Settings';
 import Trackers from './app/screens/Trackers';
 import Dashboard from './app/screens/Dashboard';
+import Profile from './app/screens/Profile';
 import Notifications from './app/screens/Notifications';
 import Messages from './app/screens/MessageInbox';
 import Search from './app/screens/Search';
@@ -39,11 +40,11 @@ import {Fonts} from './app/utils/Fonts';
 const WIDTH = Dimensions.get('window').width;
 
 type Props = {};
-class App extends Component<Props> {
+ class App extends Component<Props> {
   render() {
     return (
         <Provider store={store}>
-            <Dashboard />
+            <Profile />
         </Provider>
     );
   }
@@ -120,7 +121,7 @@ const Drawer = createDrawerNavigator({
         screen: ProgramsStack,
     },
     profile: {
-        screen: Dashboard,
+        screen: Profile,
     },
     userGroups: {
         screen: UserGroups,
