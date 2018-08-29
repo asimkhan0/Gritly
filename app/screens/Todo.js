@@ -8,6 +8,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ActionBar from '../components/ActionBar';
 import Methods from "../utils/Methods";
+import CalendarStripe from "../components/CalendarStripe/CalendarStripe";
+import Todos from "../components/Todos/Todos";
 
 export default class Todo extends React.Component {
 
@@ -17,10 +19,34 @@ export default class Todo extends React.Component {
             isOpen: false,
             isDisabled: false,
             swipeToClose: false,
-            sliderValue: 0.3
+            sliderValue: 0.3,
+
+
+            tabs:[
+                {value: 'WHAT TO DO',active: true},
+                {value: 'COMPLETED'},
+            ],
+            selectedTab: ''
         };
     }
 
+    componentDidMount() {
+        if(this.state.selectedTab === ''){
+            const selectedTab = Methods.findSelectedTab(this.state.tabs);
+            this.setState({selectedTab: selectedTab.value});
+        }
+    }
+    componentWillReceiveProps(nextProps) {
+        if(this.state.selectedTab === ''){
+            const selectedTab = Methods.findSelectedTab(this.state.tabs);
+            this.setState({selectedTab: selectedTab.value});
+        }
+    }
+
+    selectTab = (selectedTab) => {
+        const updatedTabs = Methods.selectTab(this.state.tabs, selectedTab);
+        this.setState({tabs: updatedTabs, selectedTab:selectedTab});
+    }
     onClose = () => {
         this.setState({isOpen: false})
         this.refs.modal1.close()
@@ -52,7 +78,13 @@ export default class Todo extends React.Component {
                 </Modal>
                 <Header title='Todo'  />
                 <Content>
-                    <ActionBar tabs={this.state.tabs} selectTab={this.selectTab} />
+                    <CalendarStripe/>
+                    <ActionBar
+                        tabs={this.state.tabs}
+                        selectTab={this.selectTab}
+                        style={styles.actionBar}
+                    />
+                    <Todos/>
                 </Content>
                 <Footer type={'action'} onAdd={this.onOpen} {...this.props}/>
             </Container>
@@ -89,11 +121,13 @@ function ModalContent (props) {
 
 const styles = StyleSheet.create({
 
-    wrapper: {
-        paddingTop: 50,
-        flex: 1
+    container: {
+        backgroundColor: '#ECF5FD'
     },
 
+    actionBar: {
+        backgroundColor: '#ECF5FD'
+    },
     modal: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -107,14 +141,6 @@ const styles = StyleSheet.create({
         padding: 10
     },
 
-    btnModal: {
-        position: "absolute",
-        top: 0,
-        right: 0,
-        width: 50,
-        height: 50,
-        backgroundColor: "transparent"
-    },
     linearGradient:{
         flex: 1,
         width: '100%',
@@ -136,6 +162,6 @@ const styles = StyleSheet.create({
     optionsText: {
         color: "#fff",
         fontSize: 14
-    }
+    },
 
 });

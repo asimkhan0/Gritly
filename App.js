@@ -32,19 +32,24 @@ import Weight from './app/screens/Weight';
 import AllVideos from './app/screens/AllVideos';
 import Attach from './app/screens/Attach';
 
+
+import Todo from './app/screens/Todo';
+
 import Login from './app/screens/Login';
 import Signup from './app/screens/SignUp';
+
+
 
 import {Fonts} from './app/utils/Fonts';
 
 const WIDTH = Dimensions.get('window').width;
 
 type Props = {};
- class App extends Component<Props> {
+export default class App extends Component<Props> {
   render() {
     return (
         <Provider store={store}>
-            <Profile />
+            <Todo />
         </Provider>
     );
   }
@@ -168,7 +173,7 @@ const Drawer = createDrawerNavigator({
     drawerToggleRoute: 'DrawerToggle',
 });
 
-export default AppNavigator = createSwitchNavigator({
-    auth: AuthStack,
-    home: Drawer,
-})
+// export default AppNavigator = createSwitchNavigator({
+//     auth: AuthStack,
+//     home: Drawer,
+// })

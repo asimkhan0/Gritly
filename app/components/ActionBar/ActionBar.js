@@ -15,7 +15,7 @@ export default class ActionBar extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={[styles.container,this.props.style]}>
                 <FlatList
                     horizontal={true}
                     style={{flex: 1}}
