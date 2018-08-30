@@ -36,6 +36,7 @@ import Attach from './app/screens/Attach';
 import Todo from './app/screens/Todo';
 import BloodSugarLevel from './app/screens/BloodSugarLevel';
 import WarmupsAndStretches from './app/screens/WarmupsAndStretches';
+import Pushups from './app/screens/Pushups';
 
 import Login from './app/screens/Login';
 import Signup from './app/screens/SignUp';
@@ -51,7 +52,7 @@ export default class App extends Component<Props> {
   render() {
     return (
         <Provider store={store}>
-            <WarmupsAndStretches />
+            <Pushups />
         </Provider>
     );
   }
