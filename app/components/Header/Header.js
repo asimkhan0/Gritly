@@ -17,7 +17,7 @@ export default CustomHeader = (props) => {
                     />
                 </Button>
             </Left>
-            <Body>
+            <Body style={{flex: 2}}>
                 <Text medium  style={styles.title}>{props.title}</Text>
                 {props.subTitle? <Text regular style={styles.subTitle}>{props.subTitle}</Text>:null}
             </Body>

@@ -140,7 +140,8 @@ function InnerCircle(props) {
             {children ? (
                 children
             ) : (
-                <Text style={[styles.text, ...textStyle]}>{percent}%</Text>
+
+                null
             )}
         </View>
     );
@@ -191,9 +192,11 @@ PercentageCircle.defaultProps = {
     textStyle: [],
     percent: 0,
     borderWidth: 2,
-    bgcolor: "#e3e3e3",
+    // bgcolor: "#e3e3e3",
     innerColor: "#fff",
     rotate: 0
 };
 
 module.exports = PercentageCircle;
+
+{/*<Text style={[styles.text, ...textStyle]}>{percent}%</Text>*/}
