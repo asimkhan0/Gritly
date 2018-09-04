@@ -38,6 +38,8 @@ import BloodSugarLevel from './app/screens/BloodSugarLevel';
 import WarmupsAndStretches from './app/screens/WarmupsAndStretches';
 import Pushups from './app/screens/Pushups';
 import EnterPainPoints from "./app/screens/EnterPainPoints";
+import PainPoints from "./app/screens/PainPoints";
+import PainPoint from "./app/screens/PainPoint";
 
 
 import Login from './app/screens/Login';
@@ -46,7 +48,6 @@ import Signup from './app/screens/SignUp';
 
 
 import {Fonts} from './app/utils/Fonts';
-import PainPoints from "./app/screens/PainPoints";
 
 const WIDTH = Dimensions.get('window').width;
 
@@ -55,7 +56,7 @@ export default class App extends Component<Props> {
   render() {
     return (
         <Provider store={store}>
-            <PainPoints />
+            <PainPoint />
         </Provider>
     );
   }

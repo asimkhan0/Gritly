@@ -8,7 +8,9 @@ import {
     MessageSent,
     MessageRecieved,
     Row,
-    Header, } from './ListItems';
+    Header,
+    Comment
+} from './ListItems';
 
 export default CustomList = (props) => {
 
@@ -40,7 +42,10 @@ export default CustomList = (props) => {
                         <UserItem invites avatar/>
                         <UserItem invites avatar/>
                         <UserItem invites avatar/>
-                    </View>: null
+                    </View>:
+                        props.type === 'comments'? <View>
+                            <Comment />
+                        </View>: null
             }
         </View>
     );

@@ -5,6 +5,7 @@ import MessageSent from './MessageSent';
 import MessageRecieved from './MessageRecieved';
 import Row from './TableRow';
 import Header from './TableHeader';
+import Comment from './Comment';
 
 export {
     UserItem,
@@ -14,4 +15,5 @@ export {
     MessageRecieved,
     Row,
     Header,
+    Comment
 };
