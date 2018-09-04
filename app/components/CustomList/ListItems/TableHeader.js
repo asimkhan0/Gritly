@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text, View, Icon} from 'native-base';
+import { View, Icon} from 'native-base';
 import {StyleSheet, Image,Dimensions} from 'react-native';
-import CustomText from '../../CustomText/index';
+import Text from '../../CustomText/index';
 
 export default Header = (props) => {
 
@@ -20,26 +20,20 @@ export default Header = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        // flex:1,
         flexDirection:'row',
-        // justifyContent:'space-between',
-        // paddingHorizontal: 9,
         paddingVertical: 7,
         marginVertical:1,
         backgroundColor: 'white',
-
+        paddingHorizontal:12
     },
     headings: {
-        // flex:3,
         flexDirection: 'row',
-        // justifyContent:'space-around'
     },
     placeholder: {
-        // flex: 1
     },
     headingsText: {
         color: '#8DABC4',
         fontSize:11,
-        textAlign:'center'
+        // textAlign:'center'
     }
 });
