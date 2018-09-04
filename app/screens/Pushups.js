@@ -1,7 +1,6 @@
 import React from 'react';
-import {Image, StyleSheet, TouchableOpacity} from 'react-native';
-import {View, Button, Container, Content} from 'native-base';
-import Text from '../components/CustomText';
+import {StyleSheet} from 'react-native';
+import {View, Container, Content} from 'native-base';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ActionBar from "../components/ActionBar";

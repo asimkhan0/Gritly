@@ -37,6 +37,8 @@ import Todo from './app/screens/Todo';
 import BloodSugarLevel from './app/screens/BloodSugarLevel';
 import WarmupsAndStretches from './app/screens/WarmupsAndStretches';
 import Pushups from './app/screens/Pushups';
+import EnterPainPoints from "./app/screens/EnterPainPoints";
+
 
 import Login from './app/screens/Login';
 import Signup from './app/screens/SignUp';
@@ -52,7 +54,7 @@ export default class App extends Component<Props> {
   render() {
     return (
         <Provider store={store}>
-            <Pushups />
+            <EnterPainPoints />
         </Provider>
     );
   }

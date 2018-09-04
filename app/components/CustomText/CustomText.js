@@ -10,7 +10,8 @@ export default CustomText = (props) => {
             style={[
                     props.regular? styles.textRegular :
                         props.medium? styles.textMedium:
-                            props.bold? styles.textBold: null,
+                            props.bold? styles.textBold:
+                            props.semiBold? styles.textSemiBold: null,
                     props.style
                 ]}>
             {props.children}
@@ -22,6 +23,7 @@ CustomText.propTypes = {
     regular:  PropTypes.bool,
     medium:   PropTypes.bool,
     bold:     PropTypes.bool,
+    semiBold: PropTypes.bool,
     style:    Text.propTypes.style,
     children: PropTypes.string.isRequired,
 }

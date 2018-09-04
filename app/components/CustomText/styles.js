@@ -9,5 +9,8 @@ export default StyleSheet.create({
     },
     textBold: {
         fontFamily: 'Montserrat-Bold'
+    },
+    textSemiBold: {
+        fontFamily: 'Montserrat-SemiBold'
     }
 })
