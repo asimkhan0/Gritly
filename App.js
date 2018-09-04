@@ -46,6 +46,7 @@ import Signup from './app/screens/SignUp';
 
 
 import {Fonts} from './app/utils/Fonts';
+import PainPoints from "./app/screens/PainPoints";
 
 const WIDTH = Dimensions.get('window').width;
 
@@ -54,7 +55,7 @@ export default class App extends Component<Props> {
   render() {
     return (
         <Provider store={store}>
-            <EnterPainPoints />
+            <PainPoints />
         </Provider>
     );
   }

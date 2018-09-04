@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Input from '../components/Input';
 import Slider from 'react-native-slider';
+import HumanBody from '../components/HumanBody';
 
 export default class EnterPainPoints extends React.Component {
 
@@ -22,26 +23,7 @@ export default class EnterPainPoints extends React.Component {
                 <Header title='Enter Pain Points'  {...this.props} icon={'back'}/>
                 <Content>
                     <Text medium style={styles.tapImageMessage}>Tap image to create marker</Text>
-                    <View style={styles.humanPicContainer}>
-                        <Image source={require('../../assets/humanFront.png')}
-                               style={styles.humanPic}
-                        />
-                    </View>
-                    <View style={styles.bodyTabsContainer}>
-                        <TouchableOpacity>
-                            <Text semiBold style={[styles.tabText,styles.selectedTab]}>Left</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Text semiBold style={[styles.tabText]}>Front</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Text semiBold style={[styles.tabText]}>Right</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Text semiBold style={[styles.tabText]}>Back</Text>
-                        </TouchableOpacity>
-
-                    </View>
+                    <HumanBody />
                     <View style={styles.row}>
                         <Text medium style={styles.leftText}>Body Region</Text>
                         <Text medium style={styles.rightText}>Right Shoulder</Text>
@@ -82,30 +64,7 @@ const styles = StyleSheet.create({
             textAlign: 'center',
             paddingVertical: 5
         },
-        humanPicContainer: {
-            backgroundColor: '#000',
-            alignItems:'center'
-        },
-        humanPic: {
-            height: 512,
-            width: 372
-        },
-        bodyTabsContainer: {
-            flexDirection: 'row',
-            justifyContent: 'center',
-            backgroundColor: '#000',
-            marginBottom: 3
-        },
-        tabText: {
-            color: '#fff',
-            fontSize:14,
-            paddingHorizontal:10,
-            paddingVertical: 5
-        },
-        selectedTab: {
-            borderBottomColor: '#fff',
-            borderBottomWidth: 6,
-        },
+
         row: {
             flexDirection: 'row',
             backgroundColor: '#fff',
