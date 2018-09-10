@@ -1,8 +1,7 @@
 import React from 'react';
-import {Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet } from 'react-native';
 import {View, Container, Content,} from 'native-base';
 import Text from '../components/CustomText';
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Input from '../components/Input';
 import Slider from 'react-native-slider';
@@ -10,9 +9,13 @@ import HumanBody from '../components/HumanBody';
 
 export default class EnterPainPoints extends React.Component {
 
+    static navigationOptions = {
+        title: 'Enter Pain Points'
+    };
     constructor(props) {
         super(props);
         this.state = {
+            value: 0.5
         }
     }
 
@@ -20,7 +23,7 @@ export default class EnterPainPoints extends React.Component {
 
         return (
             <Container style={styles.container}>
-                <Header title='Enter Pain Points'  {...this.props} icon={'back'}/>
+                {/*<Header title='Enter Pain Points'  {...this.props} icon={'back'}/>*/}
                 <Content>
                     <Text medium style={styles.tapImageMessage}>Tap image to create marker</Text>
                     <HumanBody />
@@ -40,7 +43,7 @@ export default class EnterPainPoints extends React.Component {
                                 trackStyle={styles.trackStyle}
                                 minimumTrackTintColor={'#007AFF'}
                                 maximumTrackTintColor={'#c7c7cc'}
-                                value={0.5}
+                                // value={0.5}
                             />
                         </View>
                     </View>

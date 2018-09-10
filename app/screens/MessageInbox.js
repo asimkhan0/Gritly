@@ -6,6 +6,9 @@ import Footer from '../components/Footer';
 
 export default class Client extends React.Component {
 
+    static navigationOptions = {
+        header: null
+    };
     render() {
 
         return (
@@ -14,6 +17,7 @@ export default class Client extends React.Component {
                 <Content>
                     <CustomList
                         type={'message'}
+                        {...this.props}
                     />
                 </Content>
                 <Footer type={'action'} {...this.props}/>

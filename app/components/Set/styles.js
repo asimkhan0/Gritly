@@ -25,13 +25,8 @@ export default StyleSheet.create({
         fontSize: 14,
         textAlign:'center'
     },
-
-
     inactiveSetCont: {
         backgroundColor: '#fff',
-        // borderWidth:1,
-        // borderColor:'#707070',
-
     },
     activeSetCont: {
         backgroundColor: '#253851',

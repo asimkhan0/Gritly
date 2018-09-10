@@ -1,11 +1,7 @@
 import React from 'react';
-import styles from './styles';
-// import Text from '../CustomText'
-import {Button, View, Text} from "native-base";
-import { ScrollView } from 'react-native';
+import { View } from "native-base";
 import {ModalHeader,EditReps} from './ModalComponents';
 import Modal from "react-native-modal";
-import Set from "../Set";
 import SetsGroup from "../SetsGroup";
 import NumberRow from "../NumberRow";
 

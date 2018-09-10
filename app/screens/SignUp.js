@@ -22,20 +22,7 @@ import * as Actions from '../actions';
 import CustomPicker from '../components/Picker';
 
 export default class SignUp extends Component {
-  // constructor(props) {
-  //   super(props);
-  //
-  //   this.state = {
-  //     fontLoaded: false
-  //   };
-  // }
-  //
-  // async componentDidMount() {
-  //   await Expo.Font.loadAsync({
-  //     'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
-  //   });
-  //   this.setState({ fontLoaded: true });
-  // }
+
     static navigationOptions = {
         header: null
     };
@@ -122,7 +109,6 @@ const styles = StyleSheet.create({
       },
       itemsContainer: {
         marginLeft: 0,
-        // margimnTop: 15
         height: 50
       },
       input: {

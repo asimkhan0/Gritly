@@ -13,6 +13,12 @@ export default Activities = props => {
             <Option title='Programs' onPress={() => props.navigation.navigate('programs')}>
                 <Image style={styles.image} source={require('../../../assets/drawer/programs.png')}/>
             </Option>
+            <Option title='Todo' onPress={() => props.navigation.navigate('todo')}>
+                <Image style={styles.image} source={require('../../../assets/drawer/programs.png')}/>
+            </Option>
+            <Option title='Pain Points' onPress={() => props.navigation.navigate('painPoints')}>
+                <Image style={styles.image} source={require('../../../assets/drawer/programs.png')}/>
+            </Option>
             <Option title='User Groups' onPress={() => props.navigation.navigate('userGroups')}>
                 <Image style={styles.image} source={require('../../../assets/drawer/usergroups.png')}/>
             </Option>

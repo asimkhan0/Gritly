@@ -3,7 +3,7 @@ import styles from './styles';
 import { View } from "native-base";
 import SearchResult from './SearchResult';
 
-export default Activities = props => {
+export default SearchResults = props => {
 
     return (
         <View style={styles.container}>

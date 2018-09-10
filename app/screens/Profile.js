@@ -1,10 +1,8 @@
-import {Content, Left, View} from 'native-base';
-import {Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {Content, View} from 'native-base';
+import {Image, StyleSheet } from 'react-native';
 import ActionBar from '../components/ActionBar';
-import Description from "../components/Description/Description";
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import List from '../components/CustomList';
 import Methods from '../utils/Methods';
 import Modal from '../components/Modal';
 import React from 'react';
@@ -42,14 +40,14 @@ export default class Profile extends React.Component {
     selectTab = (selectedTab) => {
         const updatedTabs = Methods.selectTab(this.state.tabs, selectedTab);
         this.setState({tabs: updatedTabs, selectedTab:selectedTab});
-    }
+    };
     openEditModal = () => {
         this.setState({isEditModalOpened: true});
         //TODO: later on have to check if this modal is being used here.
-    }
+    };
     closeEditModal = () => {
         this.setState({isEditModalOpened: false})
-    }
+    };
 
 
     renderPreview = () => (
@@ -59,14 +57,13 @@ export default class Profile extends React.Component {
                 <Image style={styles.previewImage} source={require('../../assets/cover.png')}
                        height={150}
                        width={'100%'}
-                ></Image>
+                />
             </View>
             <View style={styles.overlay} >
                 <View style={styles.dpContainer}>
-                    <Image style={styles.previewImage} source={require('../../assets/dp.png')}
+                    <Image style={[styles.previewImage,{borderRadius: 100}]} source={require('../../assets/dp.png')}
                            width={76}
                            height={76}
-                           style={{borderRadius: 100}}
                     />
                 </View>
             </View>
@@ -80,23 +77,6 @@ export default class Profile extends React.Component {
         </Content>
     )
 
-    // renderCustomizeVideo = () => (
-    //     <Content>
-    //         <View style={styles.previewImageContainer}>
-    //             <Image style={styles.previewImage} source={require('../../assets/cardioPreview.png')}></Image>
-    //         </View>
-    //         <Description />
-    //         <TouchableOpacity style={styles.EditMediaRow}
-    //                           onPress={()=>this.props.navigation.navigate('allVideos')}>
-    //             <Image
-    //                 source={require('../../assets/camera.png')}
-    //                 style={styles.cameraIcon}
-    //             />
-    //             <Text medium style={styles.editMediaText}>Edit Media</Text>
-    //         </TouchableOpacity>
-    //     </Content>
-    // )
-
     render() {
         return (
             <View style={styles.container}>
@@ -105,7 +85,7 @@ export default class Profile extends React.Component {
                        onClose={this.closeEditModal}
                        heading={'Reps'}/>
 
-                <Header title='General' {...this.props}/>
+                <Header title='Profile' {...this.props}/>
                 <ActionBar tabs={this.state.tabs} selectTab={this.selectTab} filterIcon/>
                 {
                     this.state.selectedTab === 'Newest'?
@@ -139,7 +119,6 @@ const styles = StyleSheet.create({
     },
     overlay:{
         ...StyleSheet.absoluteFillObject,
-        // justifyContent: 'center',
         alignItems:'center',
         zIndex:1,
         paddingTop:120

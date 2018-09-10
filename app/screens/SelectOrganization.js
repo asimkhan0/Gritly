@@ -4,23 +4,21 @@ import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import LogoSvg from '../../assets/logoSvg.svg';
 import CustomText from '../components/CustomText'
 import {
     Container,
     View,
     Text,
 } from 'native-base';
-import { ImageBackground, Dimensions, Image } from 'react-native';
+import { ImageBackground, Image } from 'react-native';
 import * as Actions from '../actions';
 import OrganizationBox from "../components/OrganizationBox";
 
-import { Fonts } from '../utils/Fonts';
-
-// import Image from 'react-native-remote-svg';
-// const {height, width} = Dimensions.get('window');
 
 export default class SelectOrganization extends Component {
+    static navigationOptions = {
+        header: null
+    };
     constructor(props) {
         super(props);
 
@@ -28,16 +26,6 @@ export default class SelectOrganization extends Component {
             fontLoaded: true
         };
     }
-
-    // async componentDidMount() {
-    //     await Expo.Font.loadAsync({
-    //         'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
-    //         // 'montserrat': require('../../assets/fonts/Montserrat/Montserrat-Thin.ttf'),
-    //     });
-    //     this.setState({ fontLoaded: true });
-    // }
-
-    // { paddingTop: Expo.Constants.statusBarHeight }
 
     render() {
         return (
@@ -52,10 +40,8 @@ export default class SelectOrganization extends Component {
                                 <CustomText medium style={styles.loginToText}> Login to </CustomText>
                             </View>
                             <View style={styles.actionButtonsCont}>
-                                <OrganizationBox />
-                                <OrganizationBox />
-                                {/*<OrganizationBox />*/}
-                                {/*<OrganizationBox />*/}
+                                <OrganizationBox onPress={() => this.props.navigation.navigate('dashboard')}/>
+                                <OrganizationBox onPress={() => this.props.navigation.navigate('dashboard')}/>
 
                             </View>
                         </View>
@@ -69,17 +55,13 @@ export default class SelectOrganization extends Component {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'rgba(37,56,81,1)',
-        // flex: 1
     },
     content:{
         paddingHorizontal: 38,
-        // flex: 1
     },
     logoContainer: {
-        // flex:1,
         alignItems: 'center',
         justifyContent: 'center',
-        // height: (height / 3),
         marginBottom: 68,
         marginTop: 63,
         width:140,
@@ -92,11 +74,8 @@ const styles = StyleSheet.create({
         width:140,
     },
     actionButtonsCont: {
-        // flex: 1,
         flexDirection: 'row',
-        // alignItems: '',
         justifyContent: 'space-around',
-        // height: (height /2) -1,
         flexWrap: 'wrap',
     },
     loginToCont:{

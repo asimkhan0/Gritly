@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { Fonts } from '../../utils/Fonts';
 
 export default StyleSheet.create({
         container: {
@@ -20,15 +19,6 @@ export default StyleSheet.create({
         groupHeadingContainer: {
             flexDirection:'row',
             justifyContent:'space-between',
-            // shadowOpacity: 0.3,
-            // shadowRadius: 3,
-            // shadowOffset: {
-            //     height: 0,
-            //     width: 0
-            // },
-            // //android shadow
-            // elevation: 2,
-            // marginBottom:2
         },
         groupContentContainer: {
         },

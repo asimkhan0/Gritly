@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Icon} from 'native-base';
-import {StyleSheet, Image,Dimensions} from 'react-native';
+import { View } from 'native-base';
+import {StyleSheet, Dimensions} from 'react-native';
 import Text from '../../CustomText/index';
 
 export default Header = (props) => {
 
-    var {height, width} = Dimensions.get('window');
-    var headingWidth = width /4;
+    let {width} = Dimensions.get('window');
+    let headingWidth = width /4;
     return(
         <View style={styles.container}>
             <View style={styles.headings}>
@@ -34,6 +34,5 @@ const styles = StyleSheet.create({
     headingsText: {
         color: '#8DABC4',
         fontSize:11,
-        // textAlign:'center'
     }
 });

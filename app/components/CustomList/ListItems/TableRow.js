@@ -6,15 +6,18 @@ import Text from '../../CustomText/index';
 export default Row = (props) => {
 
 
-    var { width } = Dimensions.get('window');
-    var columnWidth = width / 4;
-
+    let { width } = Dimensions.get('window');
+    let columnWidth = width / 4;
+    
     return(
         <View style={styles.container}>
             <Text medium style={[styles.columnText,{width:columnWidth+30}]}>{props.data}</Text>
             <Text medium style={[styles.columnText,{width:columnWidth}]}>3</Text>
             <Text medium style={[styles.columnText,{width:columnWidth}]}>05-Jul-2017</Text>
-            <Button transparent small style={{flex: 1,justifyContent: 'flex-end'}}>
+            <Button transparent small
+                    style={{flex: 1,justifyContent: 'flex-end'}}
+                    onPress={props.onPress}
+            >
                 <Icon style={styles.icon} name={'chevron-right'} type={'FontAwesome'}/>
             </Button>
         </View>
@@ -28,14 +31,12 @@ const styles = StyleSheet.create({
         paddingVertical: 7,
         marginVertical:1,
         backgroundColor: 'white',
-        // justifyContent:'space-around',
         alignItems: 'center',
         paddingHorizontal:12
     },
     columnText:{
         color:'#8DABC4',
         fontSize: 14,
-        // textAlign:'center'
     },
     icon:{
         color:'#8DABC4'

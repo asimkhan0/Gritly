@@ -22,7 +22,7 @@ DataRow = (props) => {
             <Text medium style={styles.titleText}>{props.title}</Text>
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
     dataPartsRow: {
@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
     },
     dataPart: {
         flexDirection:'row',
-        // justifyContent:'space-between'
         alignItems:'center'
     },
     circle: {

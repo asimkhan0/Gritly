@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Dimensions, View } from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
-// import ImageViewer from 'react-native-image-zoom-viewer';
 import GalleryImage from './GalleryImage';
 
 export default class Gallery extends Component {

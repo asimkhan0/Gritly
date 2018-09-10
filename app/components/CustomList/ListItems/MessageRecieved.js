@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, List, ListItem, Left, Thumbnail, Body, Right, Icon, View, Button} from 'native-base';
+import { View } from 'native-base';
 import {StyleSheet, Image} from 'react-native';
 import CustomText from '../../CustomText/index';
 
@@ -53,10 +53,7 @@ const styles = StyleSheet.create({
             height: 0,
             width: 0
         },
-        //android
-        //
-        //
-        // shadow
+        //android shadow
         elevation: 2
     },
     messageText: {

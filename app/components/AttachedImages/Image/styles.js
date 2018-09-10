@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
 
     overlay: {
         ...StyleSheet.absoluteFillObject,
-        // backgroundColor: 'rgba(69,85,117,0.1)',
         justifyContent: 'flex-start',
         alignItems:'flex-end',
         paddingTop:0

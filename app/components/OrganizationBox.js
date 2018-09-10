@@ -1,13 +1,11 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 import {
-    Container,
     View,
     Text,
-
 } from 'native-base';
 import CustomText from "./CustomText/CustomText";
 
@@ -16,14 +14,11 @@ export default class OrganizationBox extends Component {
 
     render() {
         return (
-            <View style={styles.boxContainer}>
+            <TouchableOpacity style={styles.boxContainer} onPress={this.props.onPress}>
                 <View style={styles.imgContainer}>
                     <Image style={styles.img}  source={require('../../assets/organizationdemo.png')} />
                 </View>
                 <View style={styles.companyNameCont}>
-                    {/*<Text style={styles.companyNameText}>*/}
-                        {/*Aisle Fitness Society*/}
-                    {/*</Text>*/}
                     <CustomText style={styles.companyNameText} medium> Aisle Fitness Society </CustomText>
                 </View>
                 <View style={styles.statusCont}>
@@ -31,7 +26,7 @@ export default class OrganizationBox extends Component {
                         Pending
                     </Text>
                 </View>
-            </View>
+            </TouchableOpacity>
         );
     }
 };
@@ -58,7 +53,6 @@ const styles = StyleSheet.create({
     },
     companyNameText: {
         fontSize: 12,
-        // fontWeight: '500', //medium
         color: '#253851',
         alignSelf:'center'
     },

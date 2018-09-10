@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './styles';
-// import Text from '../CustomText'
-import {Button, View, Text} from "native-base";
-import { ScrollView, TouchableOpacity } from 'react-native';
+import { View } from "native-base";
+import { ScrollView } from 'react-native';
 import {Add} from './SetsComponents';
 import Set from '../Set'
 import SetsHeader from "../SetsHeader";
@@ -33,16 +32,3 @@ export default class SetsGroup extends React.Component {
         );
     }
 }
-
-/*
-
-<View style={styles.setHeaderContainer}>
-                    <TouchableOpacity>
-                        <Text medium style={styles.setTitle}>{this.props.setTitle}</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={this.props.onEdit}>
-                        <Text medium style={styles.setEdit}>Edit</Text>
-                    </TouchableOpacity>
-                </View>
-
- */

@@ -1,12 +1,12 @@
 import React from 'react';
-import {Text, List, ListItem, Left, Thumbnail, Body, Right, Icon, View, Button} from 'native-base';
-import {StyleSheet, Image} from 'react-native';
+import { View } from 'native-base';
+import {StyleSheet, Image, TouchableOpacity} from 'react-native';
 import CustomText from '../../CustomText/index';
 
-export default NotificationItem = (props) => {
+export default MessageItem = (props) => {
 
     return(
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={props.onPress}>
             <View style={styles.leftContainer}>
                 <View style={styles.avatarContainer}>
                     <Image style={styles.avatar}
@@ -22,7 +22,7 @@ export default NotificationItem = (props) => {
                     <CustomText medium style={styles.lastMessageTimeText}>2h ago</CustomText>
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 }
 

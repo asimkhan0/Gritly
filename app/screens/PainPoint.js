@@ -1,9 +1,7 @@
 import React from 'react';
-import {Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet } from 'react-native';
 import {View, Container, Content,} from 'native-base';
 import Text from '../components/CustomText';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Input from '../components/Input';
 import Slider from 'react-native-slider';
 import HumanBody from '../components/HumanBody';
@@ -11,9 +9,13 @@ import List from '../components/CustomList';
 
 export default class PainPoint extends React.Component {
 
+    static navigationOptions = {
+        title:'Pain Point'
+    }
     constructor(props) {
         super(props);
         this.state = {
+            value: 0.5
         }
     }
 
@@ -21,7 +23,7 @@ export default class PainPoint extends React.Component {
 
         return (
             <Container style={styles.container}>
-                <Header title='Pain Point'  {...this.props} icon={'back'}/>
+                {/*<Header title='Pain Point'  {...this.props} icon={'back'}/>*/}
                 <Content>
                     <HumanBody />
                     <View style={styles.row}>
@@ -40,7 +42,7 @@ export default class PainPoint extends React.Component {
                                 trackStyle={styles.trackStyle}
                                 minimumTrackTintColor={'#007AFF'}
                                 maximumTrackTintColor={'#c7c7cc'}
-                                value={0.5}
+                                // value={0.5}
                             />
                         </View>
                     </View>

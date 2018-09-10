@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import {View, Container, Content} from 'native-base';
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ActionBar from "../components/ActionBar";
 import Methods from "../utils/Methods";
@@ -14,18 +13,24 @@ import List from '../components/CustomList';
 
 export default class Todo extends React.Component {
 
+    static navigationOptions = ({navigation}) => {
+        return {
+            title: navigation.getParam('title','An Exercise')
+        }
+    };
     constructor(props) {
         super(props);
         this.state = {
             isEditModalOpened: false,
             tabs:[
-                {value: 'Todo'},
-                {value: 'History',active: true},
+                {value: 'Todo',active: true},
+                {value: 'History'},
                 {value: 'Feedback'}
             ],
             selectedTab: ''
         }
     }
+
     componentDidMount() {
         if(this.state.selectedTab === ''){
             const selectedTab = Methods.findSelectedTab(this.state.tabs);
@@ -42,7 +47,11 @@ export default class Todo extends React.Component {
     selectTab = (selectedTab) => {
         const updatedTabs = Methods.selectTab(this.state.tabs, selectedTab);
         this.setState({tabs: updatedTabs, selectedTab:selectedTab});
-    }
+    };
+
+    submit = () => {
+        this.props.navigation.navigate('');
+    };
 
     _renderTodo() {
         return(
@@ -81,7 +90,7 @@ export default class Todo extends React.Component {
 
         return (
             <Container style={styles.container}>
-                <Header title='Pushups'  {...this.props} icon={'back'}/>
+                {/*<Header title='Pushups'  {...this.props} icon={'back'}/>*/}
                 <Content>
                     <ActionBar tabs={this.state.tabs} selectTab={this.selectTab}/>
                     {this.state.selectedTab === 'Todo'?

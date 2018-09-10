@@ -26,13 +26,11 @@ export default StyleSheet.create({
         textAlign:'center'
     },
     valueText: {
-        // color: '#B65A1A',
         color: 'rgba(0,0,0,0.2)',
         fontSize:14,
         textAlign:'center'
 
     },
     icon: {
-        // color:'#fff'
     }
 });

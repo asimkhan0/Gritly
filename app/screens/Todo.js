@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image, StyleSheet, TouchableOpacity} from 'react-native';
-import {View, Button, Container, Content} from 'native-base';
+import {View, Container, Content} from 'native-base';
 import Text from '../components/CustomText';
 import Modal from 'react-native-modalbox';
 import LinearGradient from 'react-native-linear-gradient';
@@ -12,6 +12,10 @@ import CalendarStripe from "../components/CalendarStripe/CalendarStripe";
 import Todos from "../components/Todos/Todos";
 
 export default class Todo extends React.Component {
+
+    static navigationOptions = {
+        header: null
+    };
 
     constructor() {
         super();
@@ -46,16 +50,16 @@ export default class Todo extends React.Component {
     selectTab = (selectedTab) => {
         const updatedTabs = Methods.selectTab(this.state.tabs, selectedTab);
         this.setState({tabs: updatedTabs, selectedTab:selectedTab});
-    }
+    };
     onClose = () => {
-        this.setState({isOpen: false})
-        this.refs.modal1.close()
-    }
+        this.setState({isOpen: false});
+        this.refs.modal1.close();
+    };
 
     onOpen = () => {
-        this.setState({isOpen: true})
-        this.refs.modal1.open()
-    }
+        this.setState({isOpen: true});
+        this.refs.modal1.open();
+    };
 
     onClosingState(state) {
         console.log('the open/close of the swipeToClose just changed');
@@ -76,7 +80,7 @@ export default class Todo extends React.Component {
                     {/*<LinearGradient colors={['#76EDE5', '#16ABAC']} style={styles.linearGradient}>*/}
                     <ModalContent onClose={this.onClose}/>
                 </Modal>
-                <Header title='Todo'  />
+                <Header title='Todo' {...this.props}/>
                 <Content>
                     <CalendarStripe/>
                     <ActionBar
@@ -84,7 +88,7 @@ export default class Todo extends React.Component {
                         selectTab={this.selectTab}
                         style={styles.actionBar}
                     />
-                    <Todos/>
+                    <Todos {...this.props}/>
                 </Content>
                 <Footer type={'action'} onAdd={this.onOpen} {...this.props}/>
             </Container>

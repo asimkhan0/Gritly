@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from './styles';
-import Text from '../../CustomText/index'
-import {Button, View} from "native-base";
+import { View} from "native-base";
 import { PieChart } from 'react-native-svg-charts';
-import { Circle, G, Line,Text as SVGText } from 'react-native-svg'
+import { G, Text as SVGText } from 'react-native-svg'
 import MetricHeader from "./MetricHeader";
 import MetricFooter from "./MetricFooter";
 
@@ -18,35 +17,21 @@ export default class Metric extends React.Component {
 
     render() {
 
-        const data = [25,50,25]
+        const data = [25,50,25];
 
-        // const randomColor = () => ('#' + (Math.random() * 0xFFFFFF << 0).toString(16) + '000000').slice(0, 7)
         const color = ['#629C18','#fff','#C0F183'];
 
 
         const Labels = ({ slices }) => {
             return slices.map((slice, index) => {
-                const { labelCentroid, pieCentroid, data } = slice;
+                const { labelCentroid, data } = slice;
                 return (
                     <G key={ index }>
-                        {/*<Line*/}
-                            {/*x1={ labelCentroid[ 0 ] }*/}
-                            {/*y1={ labelCentroid[ 1 ] }*/}
-                            {/*x2={ pieCentroid[ 0 ] }*/}
-                            {/*y2={ pieCentroid[ 1 ] }*/}
-                            {/*stroke={ data.svg.fill }*/}
-                        {/*/>*/}
-                        {/*<Circle*/}
-                            {/*cx={ labelCentroid[ 0 ] }*/}
-                            {/*cy={ labelCentroid[ 1 ] }*/}
-                            {/*r={ 15 }*/}
-                            {/*fill={ data.svg.fill }*/}
-                        {/*/>*/}
                         <SVGText fill={'#fff'} x={labelCentroid[ 0 ] } y={labelCentroid[ 1 ] }>{data.value}%</SVGText>
                     </G>
                 )
             })
-        }
+        };
 
         const pieData = data
             .filter(value => value > 0)
@@ -57,7 +42,7 @@ export default class Metric extends React.Component {
                     onPress: () => console.log('press', index),
                 },
                 key: `pie-${index}`,
-            }))
+            }));
 
 
         return (

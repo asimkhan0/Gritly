@@ -7,9 +7,6 @@ export default StyleSheet.create({
         paddingTop:10,
         paddingBottom:20,
         backgroundColor: '#fff',
-        // borderBottomWidth:1,
-        // borderColor:'#8DABC4'
-
         //ios shadow
         shadowOpacity: 0.3,
         shadowRadius: 3,

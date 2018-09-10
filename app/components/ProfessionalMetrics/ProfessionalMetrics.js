@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles';
 import Metric from "./Metric";
-import {ScrollView, Dimensions, Image} from "react-native";
+import { Dimensions } from "react-native";
 import Carousel from 'react-native-snap-carousel';
 import { View } from "native-base";
 import Text from '../CustomText';
@@ -29,7 +29,6 @@ export default class ProfessionalMetrics extends React.Component {
     }
 
     render() {
-        // console.warn(WIDTH)
         return (
             <View style={styles.container}>
                 <Text medium style={styles.professionalMetricHeadText}>Professional Metrics</Text>

@@ -11,6 +11,10 @@ import HumanBody from '../components/HumanBody';
 
 export default class PainPoints extends React.Component {
 
+    static navigationOptions = {
+        header: null
+    };
+
     constructor(props) {
         super(props);
         this.state = {
@@ -38,7 +42,7 @@ export default class PainPoints extends React.Component {
     selectTab = (selectedTab) => {
         const updatedTabs = Methods.selectTab(this.state.tabs, selectedTab);
         this.setState({tabs: updatedTabs, selectedTab:selectedTab});
-    }
+    };
 
 
     _renderPainIntensity(){
@@ -46,7 +50,9 @@ export default class PainPoints extends React.Component {
             <View>
                 <GraphChart/>
                 <View style={styles.listContainer}>
-                    <List type={'table'}/>
+                    <List type={'table'}
+                          onPress={(id) => this.props.navigation.navigate('enterPainPoints')}
+                    />
                 </View>
             </View>
         )
@@ -55,7 +61,8 @@ export default class PainPoints extends React.Component {
         return(
             <View>
                 <HumanBody />
-                <List type='table'/>
+                <List type='table'
+                      onPress={(id) => this.props.navigation.navigate('painPoint')}/>
             </View>
         )
     }

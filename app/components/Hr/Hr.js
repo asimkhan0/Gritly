@@ -1,7 +1,6 @@
 import React from 'react';
 import { View } from 'native-base';
 import { StyleSheet } from 'react-native';
-// import PropTypes from 'prop-types';
 
 export default Hr = (props) => {
 

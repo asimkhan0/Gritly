@@ -5,6 +5,5 @@ export default StyleSheet.create({
         paddingHorizontal: 10,
         paddingTop: 10,
         paddingBottom: 20,
-        // backgroundColor: '#fff',
     },
 })

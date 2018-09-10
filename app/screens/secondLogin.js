@@ -12,14 +12,17 @@ import {
     Button,
 }
     from 'native-base';
-import { ImageBackground, Dimensions } from 'react-native';
+import { ImageBackground, Dimensions,TouchableOpacity } from 'react-native';
 import * as Actions from '../actions';
 
 import Image from 'react-native-remote-svg';
-const {height, width} = Dimensions.get('window');
+const {height} = Dimensions.get('window');
 
 export default class Login extends Component {
 
+    static navigationOptions = {
+        header: null
+    };
     render() {
         return (
                 <Container style={[styles.container]}>
@@ -32,9 +35,9 @@ export default class Login extends Component {
                                 <Button block primary style={styles.continueAs}>
                                     <Text>Continue as Carol Anderson</Text>
                                 </Button>
-                                <View>
+                                <TouchableOpacity onPress={() => this.props.navigation.pop()}>
                                     <Text style={styles.switchAccount}>Switch Account</Text>
-                                </View>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </ImageBackground>

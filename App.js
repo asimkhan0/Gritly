@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Provider } from 'react-redux';
 import store from './app/store';
-import {createDrawerNavigator, TabNavigator, createStackNavigator, createSwitchNavigator} from 'react-navigation';
+import {createDrawerNavigator, createStackNavigator, createSwitchNavigator} from 'react-navigation';
 import {Dimensions} from 'react-native';
 
 import { YellowBox } from 'react-native';
@@ -21,6 +21,8 @@ import Profile from './app/screens/Profile';
 import Notifications from './app/screens/Notifications';
 import Messages from './app/screens/MessageInbox';
 import Search from './app/screens/Search';
+import MessageView from './app/screens/MessageView';
+import SearchResults from './app/screens/SearchResults';
 
 import ProgramView from './app/screens/ProgramView';
 import SelectCategory from './app/screens/SelectCategory';
@@ -34,15 +36,18 @@ import Attach from './app/screens/Attach';
 
 
 import Todo from './app/screens/Todo';
-import BloodSugarLevel from './app/screens/BloodSugarLevel';
-import WarmupsAndStretches from './app/screens/WarmupsAndStretches';
-import Pushups from './app/screens/Pushups';
+import EnterTrackerData from './app/screens/EnterTrackerData';
+import EnterProgramData from './app/screens/EnterProgramData';
+import ExerciseView from './app/screens/ExerciseView';
 import EnterPainPoints from "./app/screens/EnterPainPoints";
 import PainPoints from "./app/screens/PainPoints";
 import PainPoint from "./app/screens/PainPoint";
 
 
+import Splash from './app/screens/Splash';
+import SelectOrganization from './app/screens/SelectOrganization';
 import Login from './app/screens/Login';
+import SecondLogin from './app/screens/secondLogin';
 import Signup from './app/screens/SignUp';
 
 
@@ -50,54 +55,37 @@ import Signup from './app/screens/SignUp';
 import {Fonts} from './app/utils/Fonts';
 
 const WIDTH = Dimensions.get('window').width;
+const HeaderStyle = {
+    headerStyle: {
+        backgroundColor: '#F7F7F7',
+        elevation:0
+    },
+    headerTintColor: '#000',
+    headerTitleStyle: {
+        fontSize: 15,
+        fontFamily:Fonts.MontSerratMedium,
+        fontWeight: '400'
+    },
+};
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-        <Provider store={store}>
-            <PainPoint />
-        </Provider>
-    );
-  }
-}
 
-
-// const Tabs = TabNavigator({
-//         dashboard: {screen: Dashboard},
-//         clients:{screen: Client},
-//          notifications:{screen: Notifications},
-//         messages:{screen: Messages},
-//         // More: {screen: More,
-//         //     navigationOptions: {
-//         //         tabBarLabel: 'More',
-//         //         tabBarIcon: <Entypo name='dots-three-horizontal' size={25}/>,
-//         //         header: null
-//             // },
-//         // }
-//     },
-//     {
-//         initialRouteName: 'dashboard',
-//         tabBarPosition: 'bottom',
-//         navigationOptions: ({ navigation }) => ({
-//             tabBarOnPress: (scene, jumpToIndex) => {
-//                 debugger
-//                 if (scene.scene.route.routeName === "More") {
-//                     navigation.navigate('DrawerToggle')
-//                 }
-//                 else{
-//                     // jumpToIndex(scene.scene.index);
-//                     navigation.navigate(scene.scene.route.routeName)
-//                 }
-//             },
-//         }),
-//     },
-// )
+// type Props = {};
+// export default class App extends Component<Props> {
+//   render() {
+//     return (
+//         <Provider store={store}>
+//             <PainPoint />
+//         </Provider>
+//     );
+//   }
+// }
 
 const AuthStack = createStackNavigator({
     login: Login,
+    secondLogin: SecondLogin,
+    selectOrganization: SelectOrganization,
     signup: Signup,
-})
+});
 
 const ProgramsStack = createStackNavigator({
     programs: Programs,
@@ -112,28 +100,61 @@ const ProgramsStack = createStackNavigator({
     attach: Attach
 }, {
     initialRouteName: 'programs',
-    navigationOptions: {
-        headerStyle: {
-            backgroundColor: '#F7F7F7',
-            elevation:0
-        },
-        headerTintColor: '#000',
-        headerTitleStyle: {
-            fontSize: 15,
-            fontFamily:Fonts.MontSerratMedium,
-            fontWeight: '400'
-        },
-    },
-})
+    navigationOptions: HeaderStyle
+});
 
+const MessagesStack = createStackNavigator({
+    messages: Messages,
+    messageView: MessageView,
+}, {
+    initialRouteName: 'messages',
+    navigationOptions: HeaderStyle
+});
 
+const TodoStack = createStackNavigator({
+    todo: Todo,
+    enterProgramData: EnterProgramData,
+    exerciseView: ExerciseView,
+    enterTrackerData: EnterTrackerData
+
+}, {
+    initialRouteName: 'todo',
+    navigationOptions: HeaderStyle
+});
+
+const PainPointStack = createStackNavigator({
+    painPoints: PainPoints,
+    enterPainPoints: EnterPainPoints,
+    painPoint: PainPoint,
+}, {
+    initialRouteName: 'painPoints',
+    navigationOptions: HeaderStyle
+});
+
+const SearchStack = createStackNavigator({
+    search: Search,
+    searchResults: SearchResults,
+}, {
+    initialRouteName: 'search',
+    navigationOptions: HeaderStyle
+});
 
 const Drawer = createDrawerNavigator({
+    dashboard: {
+        screen: Dashboard,
+    },
+
+    profile: {
+        screen: Profile,
+    },
     programs: {
         screen: ProgramsStack,
     },
-    profile: {
-        screen: Profile,
+    todo: {
+        screen: TodoStack,
+    },
+    painPoints: {
+        screen: PainPointStack,
     },
     userGroups: {
         screen: UserGroups,
@@ -154,10 +175,6 @@ const Drawer = createDrawerNavigator({
         screen: Trackers,
     },
 
-
-    dashboard: {
-        screen: Dashboard,
-    },
     clients: {
         screen: Client,
     },
@@ -165,11 +182,11 @@ const Drawer = createDrawerNavigator({
         screen: Notifications,
     },
     messages: {
-        screen: Messages,
+        screen: MessagesStack,
     },
 
     search: {
-        screen: Search,
+        screen: SearchStack,
     },
 }, {
     contentComponent: LeftMenu,
@@ -180,7 +197,8 @@ const Drawer = createDrawerNavigator({
     drawerToggleRoute: 'DrawerToggle',
 });
 
-// export default AppNavigator = createSwitchNavigator({
-//     auth: AuthStack,
-//     home: Drawer,
-// })
+export default AppNavigator = createSwitchNavigator({
+    splash: Splash,
+    auth: AuthStack,
+    home: Drawer,
+})

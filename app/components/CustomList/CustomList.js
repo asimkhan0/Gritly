@@ -1,6 +1,6 @@
 import React from 'react';
-import {Text, List, ListItem, Left, Thumbnail, Body, Right, Icon, View, Button} from 'native-base';
-import styles from './styles';
+import { View } from 'native-base';
+
 import {
     UserItem,
     NotificationItem,
@@ -13,13 +13,12 @@ import {
 } from './ListItems';
 
 export default CustomList = (props) => {
-
     return(
         <View>
             {
                 props.type === 'user'? <UserItem avatar subTitle progress/> :
                 props.type === 'notification'? <NotificationItem/>:
-                props.type === 'message'? <MessageItem/>:
+                props.type === 'message'? <MessageItem onPress={() => {props.navigation.navigate('messageView')}} />:
                 props.type === 'messageView'? <View>
                     <MessageRecieved/>
                     <MessageSent/>
@@ -28,11 +27,11 @@ export default CustomList = (props) => {
                 </View>:
                 props.type === 'table'? <View>
                     <Header/>
-                    <Row data={'Right shoulder'}/>
-                    <Row data={'Neck Back'}/>
-                    <Row data={'Lower Abdomen'}/>
-                    <Row data={'Arms'}/>
-                    <Row data={'Lower Abdomen'}/>
+                    <Row data={'Right shoulder'} onPress={props.onPress}/>
+                    <Row data={'Neck Back'} onPress={props.onPress}/>
+                    <Row data={'Lower Abdomen'} onPress={props.onPress}/>
+                    <Row data={'Arms'} onPress={props.onPress}/>
+                    <Row data={'Lower Abdomen'} onPress={props.onPress}/>
                 </View>:
                     props.type === 'library'? <UserItem avatar subTitle/> :
                     props.type === 'user_groups'? <UserItem /> :

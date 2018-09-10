@@ -6,8 +6,6 @@ export default StyleSheet.create({
     },
     icon: {
         color: '#8DABC4',
-        // height: 15,
-        // width: 18
     },
     title: {
         color: '#000',
@@ -19,8 +17,6 @@ export default StyleSheet.create({
     },
     searchIcon: {
         color: '#8DABC4',
-        // height: 20,
-        // width: 20
     },
     filterImg: {
         width: 19,

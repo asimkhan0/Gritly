@@ -7,8 +7,6 @@ export default StyleSheet.create({
         paddingTop:10,
         paddingBottom:20,
         backgroundColor: '#fff',
-        // borderBottomWidth:1,
-        // borderColor:'#8DABC4'
 
         //ios shadow
         shadowOpacity: 0.3,
@@ -17,10 +15,7 @@ export default StyleSheet.create({
             height: 0,
             width: 0
         },
-        //android
-        //
-        //
-        // shadow
+        //android shadow
         elevation: 1
     },
 
@@ -32,7 +27,6 @@ export default StyleSheet.create({
     restingViewContainer: {
         flex: 1,
         flexDirection:'row',
-        // justifyContent:'center',
         alignItems:'center',
         flexWrap:'wrap'
     },

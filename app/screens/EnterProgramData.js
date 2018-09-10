@@ -1,32 +1,39 @@
 import React from 'react';
-import {Image, StyleSheet, TouchableOpacity} from 'react-native';
-import {View, Button, Container, Content} from 'native-base';
+import { StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Container, Content} from 'native-base';
 import Text from '../components/CustomText';
-import Header from "../components/Header";
 import PercentageCircle from '../components/PercentageCircle';
 
 import TodoViewHeading from "../components/TodoViewHeading";
 
 
+
+
 ExerciseRow = (props) => {
 
-        return (
-            <TouchableOpacity style={styles.row}>
-                <Text medium={props.exercise.active} bold={!props.exercise.active} style={styles.rowText}>{`${props.index + 1}. ${props.exercise.title}`}</Text>
-                {props.exercise.active?
-                    <PercentageCircle radius={13}
+    return (
+        <TouchableOpacity style={styles.row} onPress={() => props.navigation.navigate('exerciseView',{title:props.exercise.title})}>
+            <Text medium={props.exercise.active} bold={!props.exercise.active} style={styles.rowText}>{`${props.index + 1}. ${props.exercise.title}`}</Text>
+            {props.exercise.active?
+                <PercentageCircle radius={13}
                                   percent={70}
                                   color={"#4DFFBA"}
                                   borderWidth={5}
                                   bgcolor={null}
                 >
                 </PercentageCircle>: null}
-            </TouchableOpacity>
-        )
-}
+        </TouchableOpacity>
+    )
+};
+
 
 export default class Todo extends React.Component {
 
+    static navigationOptions = ({navigation}) => {
+        return {
+            title: navigation.getParam('title', 'A Nested Details Screen')
+        }
+    };
     constructor() {
         super();
         this.state = {
@@ -35,24 +42,21 @@ export default class Todo extends React.Component {
                 {title:'DeadLifts', active:false},
                 {title:'Chinups', active:false},
                 {title:'Squats', active:false},
-                ]
+            ]
         }
     }
 
-
-
     render(){
-
         return (
             <Container style={styles.container}>
-                <Header title='Warmups & Stretches'  />
+                {/*<Header title='Warmups & Stretches'  {...this.props}/>*/}
                 <Content>
                     <TodoViewHeading bgColor={'#ED803B'}/>
                     <Text medium style={styles.progressText}>1 out 4 is complete</Text>
                     <View style={styles.exercisesContainer}>
                         {
                             this.state.exercises.map((exercise, index) => {
-                                return <ExerciseRow exercise={exercise} index={index} key={index}/>
+                                return <ExerciseRow exercise={exercise} index={index} key={index} {...this.props}/>
                             })
                         }
                     </View>

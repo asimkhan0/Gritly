@@ -5,8 +5,6 @@ export default StyleSheet.create({
         paddingHorizontal: 13,
         flexDirection: 'row',
         backgroundColor: '#fff',
-        // borderBottomWidth:1,
-        // borderColor:'#8DABC4'
 
         //ios shadow
         shadowOpacity: 0.3,
@@ -15,10 +13,7 @@ export default StyleSheet.create({
             height: 0,
             width: 0
         },
-        //android
-        //
-        //
-        // shadow
+        //android shadow
         elevation: 1
     },
     text: {
@@ -27,7 +22,6 @@ export default StyleSheet.create({
         minWidth: 41,
         color: '#8DABC4',
         fontSize: 12
-        // marginLeft: 20,
     },
     textSelected: {
         borderStyle: 'solid',

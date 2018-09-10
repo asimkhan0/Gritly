@@ -51,7 +51,7 @@ export default class Login extends Component {
 
             <View style={styles.loginButtonContainer}>
               <Button block primary style={styles.loginButton}
-                      onPress={() => this.navigateTo('dashboard')}>
+                      onPress={() => this.navigateTo('selectOrganization')}>
                 <Text>Sign In</Text>
               </Button>
             </View>
@@ -61,6 +61,9 @@ export default class Login extends Component {
                   <Text style={styles.signup}>Sign Up </Text>
               </TouchableOpacity>
             </View>
+              <TouchableOpacity onPress={() => this.navigateTo('secondLogin')}>
+                  <Text style={styles.signup}>Second Login Test Button</Text>
+              </TouchableOpacity>
           </Content>
           </ImageBackground>
         </Container>

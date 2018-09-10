@@ -1,6 +1,6 @@
 import React from 'react';
-import {Text, List, ListItem, Left, Thumbnail, Body, Right, Icon, View, Button} from 'native-base';
-import {StyleSheet, Image} from 'react-native';
+import { View } from 'native-base';
+import { StyleSheet } from 'react-native';
 import CustomText from '../../CustomText/index';
 
 export default MessageSent = (props) => {
@@ -9,7 +9,6 @@ export default MessageSent = (props) => {
         <View style={styles.container}>
             <View style={styles.messagesContainer}>
                 <CustomText medium style={styles.messageText}>Hello? </CustomText>
-                {/*<Image style={styles.messageAttachment} source={require('../../../assets/attachment.png')}></Image>*/}
             </View>
         </View>
     );
@@ -34,7 +33,6 @@ const styles = StyleSheet.create({
         width: 30
     },
     messagesContainer: {
-        // flex:1,
         marginLeft: 12,
         justifyContent:'center',
         backgroundColor: '#ECF5FD',

@@ -1,7 +1,6 @@
 import React from 'react';
-import {Image, StyleSheet, TouchableOpacity} from 'react-native';
-import {View, Button, Container, Content} from 'native-base';
-import Text from '../components/CustomText';
+import {StyleSheet} from 'react-native';
+import { Container, Content } from 'native-base';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ActionBar from '../components/ActionBar';
@@ -10,6 +9,9 @@ import Question from "../components/Question/Question";
 
 export default class Todo extends React.Component {
 
+    static navigationOptions = {
+        header: null
+    };
     constructor() {
         super();
         this.state = {
@@ -43,7 +45,7 @@ export default class Todo extends React.Component {
     selectTab = (selectedTab) => {
         const updatedTabs = Methods.selectTab(this.state.tabs, selectedTab);
         this.setState({tabs: updatedTabs, selectedTab:selectedTab});
-    }
+    };
 
     render(){
 
