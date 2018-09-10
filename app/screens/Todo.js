@@ -78,7 +78,7 @@ export default class Todo extends React.Component {
                     onOpened={this.onOpen}
                     onClosingState={this.onClosingState}>
                     {/*<LinearGradient colors={['#76EDE5', '#16ABAC']} style={styles.linearGradient}>*/}
-                    <ModalContent onClose={this.onClose}/>
+                    <ModalContent onClose={this.onClose} {...this.props}/>
                 </Modal>
                 <Header title='Todo' {...this.props}/>
                 <Content>
@@ -103,15 +103,15 @@ function ModalContent (props) {
             style={styles.linearGradient}>
 
             <View style={styles.row}>
-                <TouchableOpacity style={styles.option}>
+                <TouchableOpacity style={styles.option} onPress={() => props.navigation.navigate('programs')}>
                     <Image source={require('../../assets/programIcon.png')} />
                     <Text medium style={styles.optionsText}>Program</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.option}>
+                <TouchableOpacity style={styles.option} onPress={() => props.navigation.navigate('painPoints')}>
                     <Image source={require('../../assets/painPointIcon.png')} />
                     <Text medium style={styles.optionsText}>Pain Point</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.option}>
+                <TouchableOpacity style={styles.option} onPress={() => props.navigation.navigate('trackers')}>
                     <Image source={require('../../assets/trackerIcon.png')} />
                     <Text medium style={styles.optionsText}>Tracker</Text>
                 </TouchableOpacity>
