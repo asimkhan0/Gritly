@@ -15,8 +15,21 @@ export default class EnterPainPoints extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 0.5
+            painIntensity: 0.5,
+            bodyPart:''
         }
+    }
+
+    drawPoint = (ev,bodyPart) => {
+        console.log(ev.nativeEvent.locationX,
+            ev.nativeEvent.locationY)
+        debugger;
+        console.log(ev)
+        this.setState({
+            locationX:ev.nativeEvent.locationX,
+            locationY:ev.nativeEvent.locationY,
+            bodyPart: bodyPart
+        })
     }
 
     render(){
@@ -26,16 +39,20 @@ export default class EnterPainPoints extends React.Component {
                 {/*<Header title='Enter Pain Points'  {...this.props} icon={'back'}/>*/}
                 <Content>
                     <Text medium style={styles.tapImageMessage}>Tap image to create marker</Text>
-                    <HumanBody />
+                    <HumanBody editable
+                               drawPoint={this.drawPoint}
+                               locationX={this.state.locationX}
+                               locationY={this.state.locationY}
+                    />
                     <View style={styles.row}>
                         <Text medium style={styles.leftText}>Body Region</Text>
-                        <Text medium style={styles.rightText}>Right Shoulder</Text>
+                        <Text medium style={styles.rightText}>{this.state.bodyPart}</Text>
                     </View>
                     <View style={styles.row}>
                         <Text medium style={styles.leftText}>Pain Intensity</Text>
                         <View style={styles.sliderContainer}>
                             <Slider
-                                value={this.state.value}
+                                value={this.state.painIntensity}
                                 onValueChange={(value) => this.setState({value})}
                                 style={{width: 150}}
                                 thumbTintColor={'#fff'}
@@ -43,7 +60,6 @@ export default class EnterPainPoints extends React.Component {
                                 trackStyle={styles.trackStyle}
                                 minimumTrackTintColor={'#007AFF'}
                                 maximumTrackTintColor={'#c7c7cc'}
-                                // value={0.5}
                             />
                         </View>
                     </View>

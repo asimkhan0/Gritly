@@ -74,7 +74,7 @@ const HeaderStyle = {
 //   render() {
 //     return (
 //         <Provider store={store}>
-//             <PainPoint />
+//             <EnterPainPoints />
 //         </Provider>
 //     );
 //   }
