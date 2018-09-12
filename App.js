@@ -69,16 +69,16 @@ const HeaderStyle = {
 };
 
 
-// type Props = {};
-// export default class App extends Component<Props> {
-//   render() {
-//     return (
-//         <Provider store={store}>
-//             <EnterPainPoints />
-//         </Provider>
-//     );
-//   }
-// }
+type Props = {};
+export default class App extends Component<Props> {
+  render() {
+    return (
+        <Provider store={store}>
+            <EnterPainPoints />
+        </Provider>
+    );
+  }
+}
 
 const AuthStack = createStackNavigator({
     login: Login,
@@ -197,8 +197,8 @@ const Drawer = createDrawerNavigator({
     drawerToggleRoute: 'DrawerToggle',
 });
 
-export default AppNavigator = createSwitchNavigator({
-    splash: Splash,
-    auth: AuthStack,
-    home: Drawer,
-})
+// export default AppNavigator = createSwitchNavigator({
+//     splash: Splash,
+//     auth: AuthStack,
+//     home: Drawer,
+// })

@@ -21,10 +21,6 @@ export default class EnterPainPoints extends React.Component {
     }
 
     drawPoint = (ev,bodyPart) => {
-        console.log(ev.nativeEvent.locationX,
-            ev.nativeEvent.locationY)
-        debugger;
-        console.log(ev)
         this.setState({
             locationX:ev.nativeEvent.locationX,
             locationY:ev.nativeEvent.locationY,
