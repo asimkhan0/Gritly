@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around'
     },
     content:{
-        marginHorizontal: 38,
+        marginHorizontal: 28,
     },
     loginForm: {
         flex:1
@@ -149,15 +149,17 @@ const styles = StyleSheet.create({
     },
     typeButtonsContainer: {
         flexDirection:'row',
-        justifyContent:'space-between',
+        justifyContent:'center',
 
     },
     typeButton: {
-        width: 155,
+        minWidth: 110,
         borderColor: '#fff',
         borderWidth: 3,
         paddingVertical:10,
-        borderRadius:4
+        paddingHorizontal:10,
+        borderRadius:4,
+        marginRight:20
     },
     typeText: {
         color: '#fff',

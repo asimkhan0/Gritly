@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
         marginVertical:1,
         backgroundColor: 'white',
         alignItems: 'center',
-        paddingHorizontal:12
+        paddingLeft:10,
+        paddingRight:4
     },
     columnText:{
         color:'#8DABC4',

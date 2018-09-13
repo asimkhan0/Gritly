@@ -33,7 +33,7 @@ export default class SignUp extends Component {
           <ImageBackground source={require('../../assets/background.png')} style={{ flex: 1, height: null, width: null }} >
             <Content style={styles.content}>
             <View style={styles.logoContainer}>
-                <Image style={styles.logo} source={LogoSvg} />
+                <Image style={styles.logo} source={require('../../assets/logo.png')} />
               </View>
               <Form style={styles.loginForm}>
                 <Item floatingLabel style={styles.itemsContainer}>

@@ -29,7 +29,7 @@ export default class Login extends Component {
                     <ImageBackground source={require('../../assets/background.png')} style={{flex:1, height: null, width: null }} >
                         <View style={styles.content}>
                             <View style={styles.logoContainer}>
-                                <Image style={styles.logo} source={LogoSvg} />
+                                <Image style={styles.logo} source={require('../../assets/logo.png')} />
                             </View>
                             <View style={styles.actionButtonsCont}>
                                 <Button block primary style={styles.continueAs}>
