@@ -48,6 +48,7 @@ import Splash from './app/screens/Splash';
 import SelectOrganization from './app/screens/SelectOrganization';
 import Login from './app/screens/Login';
 import SecondLogin from './app/screens/secondLogin';
+import Signup1 from './app/screens/SignUp1';
 import Signup from './app/screens/SignUp';
 
 
@@ -69,21 +70,22 @@ const HeaderStyle = {
 };
 
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-        <Provider store={store}>
-            <EnterPainPoints />
-        </Provider>
-    );
-  }
-}
+// type Props = {};
+// export default class App extends Component<Props> {
+//   render() {
+//     return (
+//         <Provider store={store}>
+//             <SignUp1 />
+//         </Provider>
+//     );
+//   }
+// }
 
 const AuthStack = createStackNavigator({
     login: Login,
     secondLogin: SecondLogin,
     selectOrganization: SelectOrganization,
+    signup1: Signup1,
     signup: Signup,
 });
 
@@ -197,8 +199,8 @@ const Drawer = createDrawerNavigator({
     drawerToggleRoute: 'DrawerToggle',
 });
 
-// export default AppNavigator = createSwitchNavigator({
-//     splash: Splash,
-//     auth: AuthStack,
-//     home: Drawer,
-// })
+export default AppNavigator = createSwitchNavigator({
+    splash: Splash,
+    auth: AuthStack,
+    home: Drawer,
+})

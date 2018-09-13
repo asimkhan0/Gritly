@@ -57,7 +57,7 @@ export default class Login extends Component {
             </View>
             <View style={styles.otherOptions}>
                <Text style={styles.forgotPassword}>Forgot Password ?</Text>
-              <TouchableOpacity onPress={() => this.navigateTo('signup')}>
+              <TouchableOpacity onPress={() => this.navigateTo('signup1')}>
                   <Text style={styles.signup}>Sign Up </Text>
               </TouchableOpacity>
             </View>
